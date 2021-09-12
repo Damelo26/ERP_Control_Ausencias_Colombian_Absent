@@ -1,0 +1,179 @@
+html{
+    font-size: 62.5%;/*Reset para REMS - 62.5% = 10px de 16px*/
+    box-sizing: border-box;
+}
+*,*:before, *:after{
+    box-sizing: inherit;
+}
+*{
+	/*font-family: arial;*/
+	font-family: 'Open Sans', sans-serif;
+}
+
+body{
+	padding: 0;
+	margin: 0;
+	font-size: 1.6rem;
+	
+	/*font-family: 'Open Sans', sans-serif;*/
+}
+.header{
+	background: #BFF0F6;
+	height: 18vh;
+	color:#fff;
+	font-size: 1.5rem;
+	font-weight: bold;
+	display: flex;
+	justify-content: space-between;
+	padding: 1.8rem;
+	text-align: center;
+	flex-direction: row;
+	align-items: center;
+	/*
+	padding: 30px;
+	text-align: center;
+	
+	text-transform: uppercase;
+	display: flex;
+	justify-content: space-between;
+	*/
+	
+}
+.tamanoTitulo{
+	font-size: 2.7rem;
+}
+.header figure {
+	width: 23px;
+	height: 23px;
+	padding:0;
+	margin-left: 20px;
+	margin-top: -55;
+	float: left;
+}
+.perfil .imagen{
+	padding: 0 18px;
+	
+}
+
+.perfil .imagen img{
+    width: 50px;     /*Tamaño de la foto de perfil*/
+}
+.perfil .Perfil_Nombre{
+    font-size: 13px;  /*Tamaño de fuente del nombre del usuario*/
+    color: #fff;  /*Color del nombre del usuario"*/
+	margin-bottom: 3px;
+}
+
+.perfil .Perfil_Nombre:hover{
+    color: #fff;  /*Color del nombre del usuario"*/
+}
+
+.contenedor{ 
+	padding: 0rem;
+	display: flex;
+	flex-direction: column;
+    justify-content: space-between;
+}
+.cuerpo{
+	background: #BFF0F6;
+	padding: 0px;
+	min-height: 495px;
+	height: 51.4rem;
+	margin: 0rem;
+	background-size: cover;
+	background-position: center center;
+}
+.menu{
+	display: flex;
+	align-items: center;
+	padding: 1.5rem;
+	background: #353535;
+	margin: 0rem;
+	justify-content: center;
+	text-align: center;
+}
+/*
+font-family: 'PT Sans', sans-serif; h1
+font-family: 'Oswald', sans-serif; encabezados h2
+*/
+.menu a{
+	text-decoration: none;
+	color: #fff;
+	background:353535;
+	padding: 0.6rem;
+	margin-right: 2.3rem;
+	
+	
+}
+
+.menu a:hover{
+	background: #BFF0F6;
+}
+.footer{
+	/*
+	background: #a20808;
+	color: #aaa;
+	text-align:center;
+	font-size: 10px;
+	padding: 30px;
+	height:40;
+	*/
+}
+
+.footercontador{
+	
+	margin: 0rem;
+	/*
+	text-align:right;
+	font-size: 11px;
+	*/
+}
+.Numero_Visitas{
+	
+	margin: 0rem 1rem;
+}
+
+/*
+.hooter{
+	background: #a20808;
+	text-align: center;
+	padding: 1px;
+	height:40;
+}
+*/
+
+.hooter li{
+	/*background: #a20808;*/
+	/*overflow: hidden;*/
+	display: inline-block;
+	padding: 1rem;
+	/*padding-left: 1rem;*/
+	list-style: none;
+	text-align: center;
+}
+
+.Alinear_footer{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background: #353535;
+	height: 6.2rem;
+	
+	/*
+	background: #a20808;
+	text-align: center;
+	padding: 1px;
+	height:40;
+	*/
+}
+
+.Contador_Footer{
+	padding: 1rem;
+	/*
+	border: 0px solid; display: inline; margin-left:130px;
+	margin-top:-1;
+	*/
+
+}
+
+ 
