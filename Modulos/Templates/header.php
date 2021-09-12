@@ -15,7 +15,7 @@ if(!isset($_SESSION)){
 <html>
 <head> 
 	<meta charset="UTF-8">
-	<link rel="shortcut icon" type="image/x-icon" href="img/logoprincipal.png">
+	<link rel="shortcut icon" type="image/x-icon" href="img/logo.png">
 	<link rel="stylesheet" type="text/css" href="CSS/EstiloLogin.css">
 	<link rel="stylesheet" type="text/css" href="CSS/EstiloContacto.css">
 	<link rel="stylesheet" href="CSS/Estilo.css">
@@ -24,7 +24,7 @@ if(!isset($_SESSION)){
 	<link rel="stylesheet" href="CSS/Estilos_Adopta.css" media="screen" title="no title">
 	<link rel="stylesheet" href="CSS/Estilos_Adoptados.css" media="screen" title="no title">
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;1,300;1,400&family=Oswald:wght@200;300;400;500;600;700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-	<title>Pets' Home </title>
+	<title>Colombian Absent</title>
 	<link rel="stylesheet" href="CSS/normalize.css"> <!--Esta libreria es importante ya que nos hara que en todo lado el cod se vea igual /Lo normaliza/-->
     <script src = "https://kit.fontawesome.com/b99e675b6e.js"></script>
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
