@@ -3,7 +3,7 @@ if(!isset($_SESSION)){
 	session_start();
 }
     if(!isset($_SESSION['ID_Rol'])){
-	   $imagen="img/Imagenes_Perfil/Perfil_Invitado.png";
+	   $imagen="img/Imagenes_Perfil/logo_perfil.png";
 	   $usuario="Invitado";
     }else{
         if($_SESSION['ID_Rol'] > 0){

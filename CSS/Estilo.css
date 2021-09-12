@@ -20,7 +20,7 @@ body{
 .header{
 	background: #BFF0F6;
 	height: 18vh;
-	color:#fff;
+	color:#353535;
 	font-size: 1.5rem;
 	font-weight: bold;
 	display: flex;
@@ -51,17 +51,17 @@ body{
 	float: left;
 }
 .perfil .imagen{
-	padding: 0 18px;
+	padding: 0 15px;
 	
 }
 
 .perfil .imagen img{
-    width: 50px;     /*Tamaño de la foto de perfil*/
+    width: 60px;     /*Tamaño de la foto de perfil*/
 }
 .perfil .Perfil_Nombre{
     font-size: 13px;  /*Tamaño de fuente del nombre del usuario*/
-    color: #fff;  /*Color del nombre del usuario"*/
-	margin-bottom: 3px;
+    color: rgb(55, 53, 58);  /*Color del nombre del usuario"*/
+	margin-bottom: 1px;
 }
 
 .perfil .Perfil_Nombre:hover{
