@@ -15,7 +15,7 @@ if(!isset($_SESSION)){
 <html>
 <head> 
 	<meta charset="UTF-8">
-	<link rel="shortcut icon" type="image/x-icon" href="img/logoprincipal.png">
+	<link rel="shortcut icon" type="image/x-icon" href="img/logo.png">
 	<link rel="stylesheet" type="text/css" href="CSS/EstiloLogin.css">
 	<link rel="stylesheet" type="text/css" href="CSS/EstiloContacto.css">
 	<link rel="stylesheet" href="CSS/Estilo.css">
