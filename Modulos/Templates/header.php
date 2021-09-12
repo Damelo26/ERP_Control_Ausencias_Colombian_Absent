@@ -40,7 +40,7 @@ if(!isset($_SESSION)){
 <div class="Alinear_Header">
 	<header class="header">
 		<figure>
-			<img src="img/logoprincipal.png" alt="">
+			<img src="img/logo.png" alt="">
 		</figure>
 		<p class="tamanoTitulo">COLOMBIA ABSENT</p>
 		<div class="perfil">
