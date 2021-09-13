@@ -38,9 +38,9 @@
                 <a href="index.php"><div class="logo">
                 Colombia Absent
                 </div></a>
-                <div class="menu_derecho">
+                <div class="c">
                     <ul>
-                        <li><i class="fas fa-user-tie"></i>
+                        <li><i class="fas fa-user-circle"></i> <!-- Este es el muñequito -->
                             <div class="menu_perfil">
                                 <div class="item_menu_perfil"><a href="Modulos/Exit.php">Salir</a></div>
                             </div>
