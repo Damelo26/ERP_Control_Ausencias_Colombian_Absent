@@ -1,0 +1,437 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.Envoltura{
+    width: 100%;
+    height: 100%;
+}
+
+.Top{
+    background: #BFF0F6;
+    height: 60px;
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.Top .Barra_Nav{
+    width: 80px;
+    background: #353535;   /*Color del cuadro del menu*/
+    position: relative;
+    font-size: 28px;
+}
+
+.Top .Barra_Nav .Contenido_Barra{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    width: 40px;
+    height: 20px;
+}
+
+.Top .Barra_Nav .Contenido_Barra > div{
+    width: 30px;
+    height: 2px;
+    background: #fff;      /*Color de las barras del cuadro del menu*/
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.Top .Barra_Nav .Contenido_Barra div.Linea_Dos{
+    top: 10px;
+    width: 40px;
+}
+
+.Top .Barra_Nav .Contenido_Barra div.Linea_Tres{
+    top: 20px;
+}
+
+.Top .menuadmin{
+    width: calc(100% - 80px);
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.Top .menuadmin a:hover{
+    color: #fff;
+}
+.Top .menuadmin .logo{
+    color: #353535;       /*Color del titulo*/
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 20px;
+}
+
+.Top .menuadmin .menu_derecho ul li{
+    position: relative;
+}
+
+.Top .menuadmin .menu_derecho ul li .fas{
+    font-size: 30px;   /*Tamaño del logo de administrador*/
+    cursor: pointer;
+    cursor: #000; 
+    color: #353535;    /*Color del logo del administrador*/  
+}
+
+.Top .menuadmin .menu_derecho ul li .menu_perfil{
+    position: absolute;
+    top: 35px;
+    right: -10px;
+    background: #BFF0F6;     /*Color del submenu del simbolo usuario*/
+    width: 180px;
+    padding: 10px 0;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+    border-radius: 3px;
+    user-select: none;
+    display: none;
+    color : #fff;  /*Este es el color de las letras del submenu, debatir*/
+}
+
+.Top .menuadmin .menu_derecho ul li .menu_perfil .item_menu_perfil{
+    padding: 10px;
+    cursor: pointer;
+    cursor: #004d40;
+}
+
+.Top .menuadmin .menu_derecho ul li .menu_perfil .item_menu_perfil a{
+    color: #fff;
+}
+
+.Top .menuadmin .menu_derecho ul li .menu_perfil .item_menu_perfil .fas{
+    color: #fff;
+    font-size: 16px;
+}
+
+.Top .menuadmin .menu_derecho ul li .menu_perfil .item_menu_perfil:hover{
+    background: #fff;    /*Color de una opcion del submenu cuando pasa el mouse sobre él*/
+}
+
+.Top .menuadmin .menu_derecho ul li .menu_perfil .item_menu_perfil:hover a{
+    color: #000;
+}
+
+.Top .menuadmin .menu_derecho ul li .menu_perfil .item_menu_perfil:hover .fas{
+    color: #000;
+    font-size: 16px;
+}
+
+.Top .menuadmin .menu_derecho ul li .menu_perfil:before{
+    content: '';
+    position: absolute;
+    top: -20px;
+    right: 13px;
+    border: 10px solid #000;
+    border-color: transparent transparent #353535 transparent;
+}
+
+.Top .menuadmin .menu_derecho ul li .menu_perfil.active{
+    display: block;
+}
+
+.Objeto_Contenedor .Barra_Deslizadora{
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 225px;
+    height: 100%;
+    background: #353535;
+    transition: all 0.3s ease;
+}
+
+.Objeto_Contenedor .Barra_Deslizadora .Barra_Deslizadora_Interna{
+    position: relative;
+}
+
+.Objeto_Contenedor .Barra_Deslizadora .perfil{
+    display: flex;
+    align-items: center;
+    color: #fff;
+    padding: 20px 0;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+}
+
+.Objeto_Contenedor .Barra_Deslizadora .perfil .imagen{
+    padding: 0 18px;
+}
+
+.Objeto_Contenedor .Barra_Deslizadora .perfil .imagen img{
+    width: 50px;     /*Tamaño de la foto de perfil*/
+}
+
+.Objeto_Contenedor .Barra_Deslizadora .perfil p:first-child{
+    font-size: 18px;
+    color: #fff;  /*Color del titulo "Bienvenido"*/
+    margin-bottom: 3px;
+}
+
+.Objeto_Contenedor .Barra_Deslizadora .perfil .Perfil_Nombre{
+    font-size: 14px;  /*Tamaño de fuente del nombre del usuario*/
+    color: #fff;  /*Color del nombre del usuario"*/
+    margin-bottom: 3px;
+}
+
+.Objeto_Contenedor .Barra_Deslizadora ul li a{
+    color: #fff;
+    font-size: 18px;
+    padding:  20px 30px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1px;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+}
+
+.Objeto_Contenedor .Barra_Deslizadora ul li a .icon{
+    margin-right: 15px;
+    font-size: 28px;
+}
+
+.Objeto_Contenedor .Barra_Deslizadora ul li a span{
+    display: inline-block;
+}
+
+.Objeto_Contenedor .Barra_Deslizadora ul li a:hover, .Objeto_Contenedor .Barra_Deslizadora ul li a.active{
+    background: #fff;
+    color: #000;
+}
+
+.Objeto_Contenedor .Contenido{
+    margin-top: 60px;
+    width: calc(100% - 225px);   /*Se hace la resta con el tamaño de la barra deslizadora*/ 
+    margin-left: 225px;
+    padding: 30px;
+    transition: all 0.3s ease;
+}
+
+.Objeto_Contenedor .Contenido .Item_Contenido{
+    border: 1px solid #000;    /*Color del borde del texto*/
+    margin-bottom: 30px;
+    padding: 20px;
+    font-size: 14px;
+    line-height: 22px;
+}
+
+.Envoltura.active .Barra_Deslizadora{
+    width: 80px;
+}
+
+.Envoltura.active .Barra_Deslizadora ul li a span.titulo, .Envoltura.active .Barra_Deslizadora .Perfil_Nombre, .Envoltura.active .Barra_Deslizadora .Info_Perfil{
+    display: none;
+}
+
+.Envoltura.active .Objeto_Contenedor .Contenido{
+    width: calc(100% - 80px);   
+    margin-left: 80px;
+}
+
+.Contenido_Cartas_Estadisticos{
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+}
+
+.Contenido_Cartas_Estadisticos .Carta_Estadisticos_Adoptados, .Contenido_Cartas_Estadisticos .Carta_Estadisticos_Adopcion, .Contenido_Cartas_Estadisticos .Carta_Estadisticos_Proceso, .Contenido_Cartas_Estadisticos .Carta_Estadisticos_Usuarios{
+    width: 215px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    margin: 15px;
+    text-align: center;
+    transition: all 0.25s;
+}
+
+.Contenido_Cartas_Estadisticos .Carta_Estadisticos_Adoptados{
+    background: rgb(74, 212, 92);
+}
+
+.Contenido_Cartas_Estadisticos .Carta_Estadisticos_Adopcion{
+    background: rgb(236, 214, 90);
+}
+
+.Contenido_Cartas_Estadisticos .Carta_Estadisticos_Proceso{
+    background: rgb(209, 134, 72);
+}
+
+.Contenido_Cartas_Estadisticos .Carta_Estadisticos_Usuarios{
+    background: rgb(75, 146, 226);
+}
+.Contenido_Cartas_Estadisticos .Carta_Estadisticos_Adoptados:hover, .Contenido_Cartas_Estadisticos .Carta_Estadisticos_Adopcion:hover, .Contenido_Cartas_Estadisticos .Carta_Estadisticos_Proceso:hover,.Contenido_Cartas_Estadisticos .Carta_Estadisticos_Usuarios:hover{
+    transform: translateY(-15px);
+    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+}
+
+.Contenido_Cartas_Estadisticos .Carta_Estadisticos_Adoptados h4, .Contenido_Cartas_Estadisticos .Carta_Estadisticos_Adopcion h4, .Contenido_Cartas_Estadisticos .Carta_Estadisticos_Proceso h4,.Contenido_Cartas_Estadisticos .Carta_Estadisticos_Usuarios h4{
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.Contenido_Cartas_Estadisticos .Carta_Estadisticos_Adoptados p, .Contenido_Cartas_Estadisticos .Carta_Estadisticos_Adopcion p, .Contenido_Cartas_Estadisticos .Carta_Estadisticos_Proceso p,.Contenido_Cartas_Estadisticos .Carta_Estadisticos_Usuarios p{
+    padding: 0 1rem;
+    font-size: 24px;
+    font-weight: 300;
+}
+
+.Contenido_Cartas_Estadisticos .Carta_Estadisticos_Adoptados h5, .Contenido_Cartas_Estadisticos .Carta_Estadisticos_Adopcion h5, .Contenido_Cartas_Estadisticos .Carta_Estadisticos_Proceso h5, .Contenido_Cartas_Estadisticos .Carta_Estadisticos_Usuarios h5{
+    margin-top: 15px;
+    font-size: 18px;
+}
+
+.Caja_Estadisticos_Administrador{
+    margin: auto;
+    max-width: 250px;
+    padding: 20px;
+    border: 1px solid #BDBDBD;
+}
+
+.Caja_Estadisticos_Administrador select{
+    width: 100%;
+    font-size: 16px;
+    padding: 5px;
+}
+
+.Resultados_Estadisticos_Administrador{
+    margin: auto;
+    margin-top: 45px;
+    width: 550px;
+}
+
+.Contenedor_Grafica{
+    text-align: center;
+    width: 530px;
+    box-align: center;
+}
+
+#Contenedor_Adoptados_Mascotas form {
+    color: #d5e6da;
+    border:0;
+    padding: 6px;
+	justify-content: center;
+}
+
+.Btn_Apr{
+    color: #ffffff;
+    padding: 5px;
+   
+    width:80px;
+    text-align: center;
+    background-color: rgb(107, 240, 107);
+    font-size: 10px;
+}
+.Btn_Rech{
+    color: #ffffff;
+    padding: 5px;
+   
+    width:80px;
+    text-align: center;
+    background-color: rgb(250, 16, 16); 
+    font-size: 10px;
+}
+
+#Fecha_Grafica_Estadistica{
+    padding: 30px 15px 15px;
+}
+
+.Fecha_Estadistico_Administrador{
+    width: 300px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.Fecha_Estadistico_Administrador form{
+    background: #FFF;
+    margin: auto;
+    padding: 20px 20px;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+
+.Fecha_Estadistico_Administrador label{
+    display: block;
+    font-size: 14pt;
+    font-family: 'arial';
+    margin: 10px auto 5px auto;
+}
+
+.Fecha_Estadistico_Administrador input{
+    display: block;
+    width: 100%;
+    font-size: 14pt;
+    padding: 5px;
+    border: 1px solid #85929e;
+    border-radius: 7px;
+    margin: 7px;
+}
+
+.Btn_Fecha_Search{
+    color: #ffffff;
+    padding: 5px;
+    width:100px;
+    text-align: center;
+    background-color: rgb(36, 150, 36);
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.Datos_Eliminar_Administrador{
+    text-align: center;
+}
+
+.Datos_Eliminar_Administrador h2{
+    font-size: 16pt;
+}
+
+.Datos_Eliminar_Administrador span{
+    font-weight: bold;
+    color: #41be67;
+    font-size: 12pt;
+}
+
+.Btn_Cancelar_Eliminar_Mascota{
+    width: 125px;
+    background: #b64444;
+    color: #FFF;
+    display: inline-block;
+    padding: 6px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 18px;
+}
+
+.Btn_Aceptar_Eliminar_Mascota{
+    width: 125px;
+    background: #22861e;
+    color: #FFF;
+    display: inline-block;
+    padding: 8px;
+    border-radius: 5px;
+    margin: 14px;
+}
+
+.Datos_Eliminar_Administrador form{
+    background: initial;
+    margin: auto;
+    padding: 20px 50px;
+    border: 0;
+}
