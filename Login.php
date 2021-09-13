@@ -105,10 +105,10 @@
               <input type="password" placeholder="Clave" name="clave"/> <!-- Elemento que recibe la clave de usuario -->
             </div>
             <div class="alert"><?php  echo isset($alert) ? $alert : ''; ?></div>
-            <input type="submit" value="Ingresar" name="btnacceso" class="btn solid" /> 
+            <input type="submit" value="Ingresar" name="btnacceso" class="btn solid" />
           </form>
-          <form class="sign-up-form form_login_v" method="POST"> <!--ESTE ES EL FORMULARIO DE REGISTRATE-->
-            <div class = "Register_alert" ><?php echo isset($Register_alert) ? $Register_alert : ''; ?></div>
+          <!-- <form class="sign-up-form form_login_v" method="POST"> --> <!--ESTE ES EL FORMULARIO DE REGISTRATE-->
+            <!-- <div class = "Register_alert" ><?php // echo isset($Register_alert) ? $Register_alert : ''; ?></div>
             <h2 class="title">Registrate</h2>
               <div class="general_registrate">
                 <div class="input-field-dos">
@@ -160,21 +160,21 @@
                   <select name="rol" id="rol">
                   <option value="Tipo usuario"> Tipo usuario</option>
                     <?php   
-                      if($result_rol > 0){
-                        while ($rol = mysqli_fetch_array($query_rol)){
-                          if($_SESSION['ID_Rol'] == 1){
+                      // if($result_rol > 0){
+                      //   while ($rol = mysqli_fetch_array($query_rol)){
+                      //     if($_SESSION['ID_Rol'] == 1){
                     ?>
                       <option value="<?php echo $rol["ID_Rol"]; ?>"><?php echo $rol["Nombre"] ?></option>
                     <?php
-                      }else if($_SESSION['ID_Rol'] != 1 || empty($_SESSION['ID_Rol'])){
-                        if($rol["ID_Rol"] != 1){
-                    ?>
+                    //   }else if($_SESSION['ID_Rol'] != 1 || empty($_SESSION['ID_Rol'])){
+                    //     if($rol["ID_Rol"] != 1){
+                     ?>
                       <option value="<?php echo $rol["ID_Rol"]; ?>"><?php echo $rol["Nombre"]; ?></option>
                     <?php
-                            }
-                          }
-                        }
-                      }
+                      //       }
+                      //     }
+                      //   }
+                      // }
                     ?>
                   </select>
                   <i></i>
@@ -184,7 +184,7 @@
                   <select name="cargo" id="cargo">
                   <option value="Tipo cargo"> Cargo</option>
                     
-                      <option value="<?php echo $cargo["ID_Rol"]; ?>"><?php echo $cargo["Nombre"]; ?></option>
+                      <option value="<?php //echo $cargo["ID_Rol"]; ?>"><?php echo $cargo["Nombre"]; ?></option>
       
                   </select>
                   <i></i>
@@ -198,13 +198,13 @@
                     <a href="Archivos de Pets' Home//POLITICA DE PRIVACIDAD DE PETS´ HOME.pdf" target = "_blank">Terminos y condiciones<a>
                   </label>
                 </div>
-                <input type="submit" class="btn" value="Registrate" name="btnacceso" /> 
+                <input type="submit" class="btn" value="Registrate" name="btnacceso" />  -->
           </form>
         </div>
       </div>
       <div class="panels-container">
         <div class="panel left-panel">
-          <div class="content">
+          <!-- <div class="content">
             <h3 class="titulo_login">¿Eres nuevo aqui?</h3>
             <p>
               Si no tienes una cuenta registrada, registrate aquí.
@@ -212,7 +212,7 @@
             <button class="btn transparent" id="sign-up-btn">
               Registrate
             </button>
-          </div>
+          </div> -->
           <img src="img/logo6.png" class="image" alt="" />
         </div>
         <div class="panel right-panel">
