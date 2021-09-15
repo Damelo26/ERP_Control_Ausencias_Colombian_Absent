@@ -9,7 +9,7 @@
     <title>Colombia Absent</title>
     <link rel="stylesheet" href="CSS/EstiloAdmin.css">
     <link rel="stylesheet" href="CSS/EstiloLogin.css">
-    <link rel="stylesheet" href="CSS/EstiloRegistrar_Admin.css">
+    <link rel="stylesheet" href="CSS/EstiloRegistrarUsu.css">
     <script src = "https://kit.fontawesome.com/b99e675b6e.js"></script>
     <script src="JavaScript/Admin.js" defer></script>
     <script src="JavaScript/Foto_Mascota.js" defer></script>
@@ -80,9 +80,9 @@ if(!isset($_SESSION)){
                         </div>
                         <ul>
                             <li>
-                                <a href="Estadistica_Admin.php" class="active">
+                                <a href="Registrar_Usuario.php" class="active">
                                     <span class="icon"><i class="fas fa-chart-bar"></i></span>
-                                    <span class="titulo">Estadísticas</span>
+                                    <span class="titulo">Registrar usuario</span>
                                 </a>
                             </li>
                             <li>
