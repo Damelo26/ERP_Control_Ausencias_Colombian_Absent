@@ -1,91 +1,60 @@
 <?php $alert='';
-	// session_start();	
-	// // include "Configuraciones/Funciones.php";
-	// // if(!empty($_SESSION['active'])){
-	// // 	if($_SESSION['ID_Rol'] != 1){
-	// // 		header('location: index.php');
-	// // 	}
-	// // }
-	// if(isset($_POST['btnacceso'])){
-	// 	$valor = $_POST['btnacceso'];
-	// 	if($valor == "Ingresar"){
-	// 		if(!empty($_SESSION['active'])){
-	// 			if($_SESSION['ID_Rol'] == 1){
-	// 				header('location: Estadistica_Admin.php');
-	// 			}else if($_SESSION['ID_Rol'] != 1){
-	// 				header('location: index.php');
-	// 			}
-	// 		}else{
-	// 			if(empty($_POST['usuario']) || empty($_POST['clave'])){
-	// 			$alert = 'Ingrese su usuario y contraseña';
-	// 			}else{
-	// 				require_once "Configuraciones/Funciones.php";
-	// 				$user = mysqli_real_escape_string($conexion,$_POST['usuario']);
-	// 				$pass = md5(mysqli_real_escape_string($conexion,$_POST['clave']));
-	// 				$query = mysqli_query($conexion,"SELECT * FROM usuario WHERE Usuario = '$user' AND Contrasena = '$pass'");
-	// 				$result = mysqli_num_rows($query);
-	// 				if($result > 0 ){
-	// 					$data = mysqli_fetch_array($query);
-	// 					$_SESSION['active'] = true;
-	// 					$_SESSION['cedula'] = $data['Cedula'];
-	// 					$_SESSION['Primer_Nombre'] = $data['Primer_Nombre'];
-	// 					$_SESSION['Segundo_Nombre'] = $data['Segundo_Nombre'];
-	// 					$_SESSION['Primer_Apellido'] = $data['Primer_Apellido'];
-	// 					$_SESSION['Segundo_Apellido'] = $data['Segundo_Apellido'];
-	// 					$_SESSION['Correo'] = $data['Email'];
-	// 					$_SESSION['Telefono'] = $data['Telefono'];
-	// 					$_SESSION['Direccion'] = $data['Direccion'];
-	// 					$_SESSION['Usuario'] = $data['Usuario'];
-	// 					$_SESSION['Contrasena'] = $data['Contrasena'];
-	// 					$_SESSION['Imagen'] = $data['Imagen'];
-	// 					$_SESSION['ID_Rol'] = $data['ID_Rol'];
-	// 					if($_SESSION['ID_Rol'] == 1){
-	// 					header('location: Estadistica_Admin.php');
-	// 					}else if($_SESSION['ID_Rol'] != 1){
-	// 					header('location: index.php');
-	// 					}	
-	// 				}else{
-	// 					$alert = 'El usuario o la contraseña son incorrectos';
-	// 					session_destroy();
-	// 				}
-	// 			}
-	// 		}
-	// 	}else if($valor == "Registrate"){
-	// 		$Register_alert='';
-	// 		if(empty($_POST['cedula']) || empty($_POST['primernombre']) || empty($_POST['segundonombre']) || empty($_POST['primerapellido']) || empty($_POST['segundoapellido']) ||
-	// 		empty($_POST['correo']) || empty($_POST['telefono']) || empty($_POST['direccion']) ||empty($_POST['usuario']) || empty($_POST['contraseña']) || empty($_POST['rol'])){
-	// 			$Register_alert = '<p class="msg_error">Todos los campos son obligatorios.</p>';
-	// 		}else{
-	// 			$primernombre = $_POST['primernombre'];
-	// 			$segundonombre = $_POST['segundonombre'];
-	// 			$primerapellido = $_POST['primerapellido'];
-	// 			$segundoapellido = $_POST['segundoapellido'];
-	// 			$cedula = $_POST['cedula'];
-	// 			$correo = $_POST['correo'];
-	// 			$telefono = $_POST['telefono'];
-	// 			$direccion = $_POST['direccion'];
-	// 			$usuario = $_POST['usuario'];
-	// 			$contraseña = md5($_POST['contraseña']);
-	// 			$Primera_Letra = strtoupper($primernombre[0]);
-	// 			$foto = 'img/Imagenes_Perfil/Perfil_'."$Primera_Letra".'.png';
-	// 			$rol = $_POST['rol'];
-	// 			$query = mysqli_query($conexion, "SELECT * FROM usuario WHERE usuario = '$usuario' OR email = '$correo'");
-	// 			$result = mysqli_fetch_array($query);
-	// 			if($result > 0){
-	// 				$Register_alert='<p class = "msg_error">El correo o el usuario ya existe.</p>';
-	// 			}else{
-	// 				$query_insert = mysqli_query($conexion, "INSERT INTO usuario(Cedula, Primer_Nombre, Segundo_Nombre,
-	// 				Primer_Apellido, Segundo_Apellido, Email, Telefono, Direccion, Usuario, Contrasena, Imagen, ID_Rol) VALUES('$cedula','$primernombre'
-	// 				,'$segundonombre','$primerapellido','$segundoapellido','$correo','$telefono','$direccion','$usuario','$contraseña','$foto','$rol')");   
-	// 				if($query_insert){
-	// 					$Register_alert='<p class = "msg_save">Usuario creado correctamente.</p>';
-	// 				}else{
-	// 					$Register_alert='<p class = "msg_error">Error al crear el usuario.</p>';
-	// 				}
-	// 			}
-	// 		}
-	// 	} 
-	// } /*If de validacion del btnacceso*/ 
+	 session_start();	
+	 include "Configuraciones/Funciones.php";
+ if(!empty($_SESSION['active'])){
+ 	if($_SESSION['cod_usuario'] != 0){
+			header('location: index.php');
+		}
+	 }
+ if(isset($_POST['btnacceso'])){
+	 	$valor = $_POST['btnacceso'];
+	 	if($valor == "Ingresar"){
+			if(!empty($_SESSION['active'])){
+			if($_SESSION['cod_usuario'] == 0){
+			header('location: Admin.php');
+		}else if($_SESSION['cod_usuario'] != 0){
+				header('location: index.php');
+			}
+ 		}else{
+		if(empty($_POST['usuario']) || empty($_POST['clave'])){
+			$alert = 'Ingrese su usuario y contraseña';
+			}else{
+		require_once "Configuraciones/Funciones.php";
+			$user = mysqli_real_escape_string($conexion,$_POST['usuario']);
+			$pass = mysqli_real_escape_string($conexion,$_POST['clave']);
+		$query = mysqli_query($conexion,"SELECT * FROM usuario WHERE cedula = '$user' AND contrasena = '$pass'");
+		$result = mysqli_num_rows($query);
+		if($result > 0 ){
+	 					$data = mysqli_fetch_array($query);
+	 					$_SESSION['active'] = true;
+	 		    	$_SESSION['cedula'] = $data['cedula'];
+	 					$_SESSION['primer_nombre'] = $data['primer_nombre'];
+				  	$_SESSION['segundo_nombre'] = $data['segundo_nombre'];
+            $_SESSION['primer_apellido'] = $data['primer_apellido'];
+	 					$_SESSION['segundo_apellido'] = $data['segundo_apellido'];
+            $_SESSION['imagen'] = $data['imagen'];
+            $_SESSION['direccion'] = $data['direccion'];
+            $_SESSION['numero_celular'] = $data['numero_celular'];
+            $_SESSION['correo'] = $data['correo'];
+            $_SESSION['contrasena'] = $data['contrasena'];
+            $_SESSION['cod_usuario'] = $data['cod_usuario'];
+           $_SESSION['cod_cargo'] = $data['cod_cargo'];
+	 			
+	 					if($_SESSION['cod_usuario'] == 0){
+	 					header('location: Admin.php');
+	 					}else if($_SESSION['cod_usuario'] != 0){
+	 					header('location: index.php');
+	 					}	
+	 			}
+           else{
+	 					$alert = 'El usuario o la contraseña son incorrectos';
+	 					session_destroy();
+	 				}
+	 			} //ELSE DESPUES DE INGRESE SU USUARIO
+	 		} //ELSE
+    } //IF INGRESAR
+  } //IF BOTON ACCESO
+
 ?>
 
 <?php include_once 'Modulos/Templates/header.php';?>
