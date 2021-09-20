@@ -524,3 +524,110 @@ input {
 	text-align: center;
 	padding-bottom: 8px;	 
 }
+
+#Contenedor_Administrar_Historial h2{
+	font-size: 40px;
+	display: inline-block;
+}
+
+table{
+	border-collapse: collapse;
+	font-size: 17px;
+	font-family: 'arial';
+	width: 100%;
+}
+
+table th{
+	padding: 5px;
+	background: #BFF0F6;
+	color: #000;
+	text-align: center;
+}
+
+table tr:mth-child(odd){
+	background: #FFF;
+}
+
+table td{
+	padding: 5px;
+	text-align: center;
+	font-size: 15px;
+}
+
+.Formulario_Buscador{
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	float: right;
+	background: initial;
+	padding: 5px;
+	border-radius: 15px;
+	border: 0;
+	width: 225px;
+}
+
+.Formulario_Buscador label{
+	font-size: 14px;
+}
+
+.Formulario_Buscador .Btn_Buscador{
+	background: #BFF0F6;
+	color: #000;
+	padding: 0 5px;
+	border: 0;
+	cursor: pointer;
+	margin-left: 10px;
+	width: 70px;
+	font-size: 14px;
+}
+
+.Foto_Trabajadores_Tabla_Ausencias{
+    width:80px;
+    height:80px;
+    border-radius:50%;
+    /* border: 2px solid #000; Esto le crea un borde a la foto de las tablas, pero queda raro */
+}
+
+.Link_Rechazar_Ausencia{
+  color: rgb(238, 106, 74);
+}
+
+.Link_Aprobar_Ausencia, .Link_Verificar_Ausencia{
+  color: rgb(12, 206, 109);
+}
+
+.Paginador_Administrador_Tabla ul{
+	padding: 12px;
+	list-style: none;
+	margin-top: 15px;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	justify-content: flex-end;
+  color: #000;
+}
+
+.Paginador_Administrador_Tabla a, .Pagina_Seleccionada{
+	color: #000;
+	border: 1px solid #000;
+	padding: 5px;
+	display: inline-block;
+	font-size: 13px;
+	text-align: center;
+	width: 40px;
+}
+
+.Paginador_Administrador_Tabla a:hover{
+	background: #fff;
+  color: #000;
+}
+
+.Pagina_Seleccionada{
+	color: #000;
+	background: #BFF0F6;
+	border: 1px solid #000;
+}

@@ -198,7 +198,8 @@
     transition: all 0.3s ease;
 }
 
-.Objeto_Contenedor .Barra_Deslizadora ul li a .icon{
+.Objeto_Contenedor .Barra_Deslizadora ul li a .fas{
+    color: #fff;
     margin-right: 15px;
     font-size: 28px;
 }
@@ -206,10 +207,14 @@
 .Objeto_Contenedor .Barra_Deslizadora ul li a span{
     display: inline-block;
 }
+/* Aca se hace el cambio de color de los ocionos en el menu izquierdo del admin */
+.Objeto_Contenedor .Barra_Deslizadora ul li:hover{
+    color: #353535; 
+}
 
-.Objeto_Contenedor .Barra_Deslizadora ul li a:hover, .Objeto_Contenedor .Barra_Deslizadora ul li a.active{
+.Objeto_Contenedor .Barra_Deslizadora ul li a:hover, .Objeto_Contenedor .Barra_Deslizadora ul li a span .fas:hover{
     background: #fff;
-    color: #000;
+    color: #353535;
 }
 
 .Objeto_Contenedor .Contenido{
