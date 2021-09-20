@@ -110,7 +110,7 @@
                         <li>
                             <a href="Solicitudes_Aprobadas_Admin.php">
                                 <span class="icon"><i class="fas fa-clipboard-check"></i> </span>
-                                <span class="titulo">Aprovados</span>
+                                <span class="titulo">Aprobados</span>
                             </a>
                         </li>
                         <li>
