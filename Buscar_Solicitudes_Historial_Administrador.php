@@ -3,10 +3,10 @@
 <div class="Contenido">
   <section id="Contenedor_Administrar_Historial">
     <?php
-            $Buscador = strtolower($_REQUEST['Buscador']);
-            if(empty($Buscador)){
-                header('Location: Mascota_Aprobada.php');
-            }
+      $Buscador = strtolower($_REQUEST['Buscador']);
+      if(empty($Buscador)){
+          header('Location: Historial_Solicitudes_Admin.php');
+      }
     ?>
     <h2><i class="fas fa-history"></i> Historial de solicitudes</h2>
     <form action="Buscar_Solicitudes_Historial_Administrador.php" method="get" class="Formulario_Buscador">

@@ -2,7 +2,13 @@
 
 <div class="Contenido">
     <section id="Contenedor_Administrar_Historial">
-        <h2><i class="fas fa-clipboard-check"></i> Ausencias aprobadas</h2>
+    <?php
+            $Buscador = strtolower($_REQUEST['Buscador']);
+            if(empty($Buscador)){
+                header('Location: Solicitudes_Aprobadas_Admin.php');
+            }
+    ?>      
+    <h2><i class="fas fa-clipboard-check"></i> Ausencias aprobadas</h2>
         <form action="Buscar_Solicitudes_Aprobadas_Administrador.php" method="get" class="Formulario_Buscador">
             <input type="text" name="Buscador" id="Buscador" placeholder="Buscar">
             <input type="submit" value="Buscar" class="Btn_Buscador">
@@ -18,7 +24,7 @@
             </tr>
             <?php
             include "Configuraciones/Funciones.php";
-            $Query_Cantidad_Registros = mysqli_query($conexion, "SELECT COUNT(*) as Total_Registros FROM historial_ausencias INNER JOIN ausencias ON ausencias.cod_ausencias = historial_ausencias.cod_ausencias WHERE ausencias.cod_Estado = 1");
+            $Query_Cantidad_Registros = mysqli_query($conexion, "SELECT COUNT(*) as Total_Registros FROM historial_ausencias h INNER JOIN usuario u on h.cedula = u.cedula INNER JOIN ausencias au on h.cod_ausencias = au.cod_ausencias inner join tipo_estado es on au.cod_Estado = es.cod_Estado INNER JOIN tipo_ausencias t_au on au.cod_tipo_ausencias = t_au.cod_tipo_ausencias inner join cargo c on u.cod_cargo = c.cod_cargo WHERE (u.cedula LIKE '%$Buscador%' OR u.primer_nombre LIKE '%$Buscador%' OR u.segundo_nombre LIKE '%$Buscador%' OR u.primer_apellido LIKE '%$Buscador%' OR u.segundo_apellido  LIKE '%$Buscador%' or c.nombre_cargo LIKE '%$Buscador%' or au.fecha LIKE '%$Buscador%' or es.nombre LIKE '%$Buscador%' or t_au.nombre_tipo_ausencias LIKE '%$Buscador%') AND au.cod_Estado = 1");
             $Resultado_Cantidad_Registros = mysqli_fetch_array($Query_Cantidad_Registros);
             $Total_Cantidad_Registros = $Resultado_Cantidad_Registros['Total_Registros'];
             $Total_Registros_Por_Pagina = 15;
@@ -29,7 +35,7 @@
             }
             $Desde = ($Pagina - 1) * $Total_Registros_Por_Pagina;
             $Total_Paginas = ceil($Total_Cantidad_Registros / $Total_Registros_Por_Pagina);
-            $Busqueda_Tabla_Historial_Ausencias = mysqli_query($conexion, "SELECT H_A.cod_historial_ausencias as Codigo, U.cedula, U.primer_nombre, U.segundo_nombre, U.primer_apellido, U.segundo_apellido, U.imagen, au.fecha, Tipo_au.nombre_tipo_ausencias as tipo, Es.nombre as Estado from historial_ausencias H_A INNER JOIN usuario U ON H_A.cedula = U.cedula INNER JOIN ausencias au ON H_A.cod_ausencias = au.cod_ausencias INNER JOIN tipo_ausencias Tipo_au ON au.cod_tipo_ausencias = Tipo_au.cod_tipo_ausencias INNER JOIN tipo_estado Es on Es.cod_Estado = au.cod_Estado WHERE au.cod_Estado = 1 order BY au.fecha Limit $Desde,$Total_Registros_Por_Pagina");
+            $Busqueda_Tabla_Historial_Ausencias = mysqli_query($conexion, "SELECT h.cod_historial_ausencias as Codigo, u.cedula, u.primer_nombre, u.segundo_nombre, u.primer_apellido, u.segundo_apellido, u.imagen, au.fecha, t_au.nombre_tipo_ausencias as tipo, es.nombre as Estado FROM historial_ausencias h INNER JOIN usuario u on h.cedula = u.cedula INNER JOIN ausencias au on h.cod_ausencias = au.cod_ausencias inner join tipo_estado es on au.cod_Estado = es.cod_Estado INNER JOIN tipo_ausencias t_au on au.cod_tipo_ausencias = t_au.cod_tipo_ausencias inner join cargo c on u.cod_cargo = c.cod_cargo WHERE (u.cedula LIKE '%$Buscador%' Or u.primer_nombre LIKE '%$Buscador%' OR u.segundo_nombre LIKE '%$Buscador%' OR u.primer_apellido LIKE '%$Buscador%' OR u.segundo_apellido  LIKE '%$Buscador%' or c.nombre_cargo LIKE '%$Buscador%' or au.fecha LIKE '%$Buscador%' or es.nombre LIKE '%$Buscador%' or t_au.nombre_tipo_ausencias LIKE '%$Buscador%') AND au.cod_Estado = 1 order BY au.fecha Limit $Desde,$Total_Registros_Por_Pagina");
             $Resultado_Tabla = mysqli_num_rows($Busqueda_Tabla_Historial_Ausencias);
             if ($Resultado_Tabla > 0) {
                 while ($Datos_Tabla = mysqli_fetch_array($Busqueda_Tabla_Historial_Ausencias)) {
