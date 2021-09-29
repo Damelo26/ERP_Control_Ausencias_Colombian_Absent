@@ -34,19 +34,20 @@
             if ($Resultado_Tabla > 0) {
                 while ($Datos_Tabla = mysqli_fetch_array($Busqueda_Tabla_Historial_Ausencias)) {
             ?>
-                    <tr>
-                        <td><img src="<?php echo $Datos_Tabla["imagen"]; ?>" alt="" class="Foto_Trabajadores_Tabla_Ausencias"></td>
-                        <td><?php echo $Datos_Tabla["cedula"]; ?></td>
-                        <td><?php echo $Datos_Tabla["primer_nombre"], " ", $Datos_Tabla["segundo_nombre"], " ", $Datos_Tabla["primer_apellido"], " ", $Datos_Tabla["segundo_apellido"]; ?></td>
-                        <td><?php echo $Datos_Tabla["tipo"]; ?></td>
-                        <td><?php echo $Datos_Tabla["fecha"]; ?></td>
-                        <td>
-                            <a href="Verificar_Ausencia_Administrador.php?id=<?php echo $Datos_Tabla["Codigo"]; ?>" class="Link_Verificar_Ausencia">Verificar</a>
-                            <!-- <a href="Aprobar_Ausencia_Administrador.php?id=<?php //echo $Datos_Tabla["Codigo"]; 
-                                                                                ?>" class="Link_Aprobar_Ausencia">Aprobar </a>
-                  <a href="Rechazar_Ausencia_Administrador.php?id=<?php //echo $Datos_Tabla["Codigo"]; 
-                                                                    ?>" class="Link_Rechazar_Ausencia">Rechazar</a> -->
-                        </td>
+                    <!-- No funcionan las funciones onMouseOver y onMouseOut, intentar hacerlas funcionar -->
+                    <tr id="fila_<?echo $Datos_Tabla['Codigo']; ?>" onMouseOver="ResaltarFila('fila_<?echo $Datos_Tabla['Codigo']; ?>');" onMouseOut="RestablecerFila('fila_<?echo $Datos_Tabla['Codigo']; ?>')" onClick="CrearEnlace('Verificar_Ausencia_Administrador.php?id=<?php echo $Datos_Tabla["Codigo"]; ?>');">
+                            <td><img src="<?php echo $Datos_Tabla["imagen"]; ?>" alt="" class="Foto_Trabajadores_Tabla_Ausencias"></td>
+                            <td><?php echo $Datos_Tabla["cedula"]; ?></td>
+                            <td><?php echo $Datos_Tabla["primer_nombre"], " ", $Datos_Tabla["segundo_nombre"], " ", $Datos_Tabla["primer_apellido"], " ", $Datos_Tabla["segundo_apellido"]; ?></td>
+                            <td><?php echo $Datos_Tabla["tipo"]; ?></td>
+                            <td><?php echo $Datos_Tabla["fecha"]; ?></td>
+                            <td class="Link_Verificar_Ausencia">
+                                Verificar
+                                <!-- <a href="Aprobar_Ausencia_Administrador.php?id=<?php //echo $Datos_Tabla["Codigo"]; 
+                                                                                    ?>" class="Link_Aprobar_Ausencia">Aprobar </a>
+                    <a href="Rechazar_Ausencia_Administrador.php?id=<?php //echo $Datos_Tabla["Codigo"]; 
+                                                                        ?>" class="Link_Rechazar_Ausencia">Rechazar</a> -->
+                            </td>
                     </tr>
             <?php
                 }
