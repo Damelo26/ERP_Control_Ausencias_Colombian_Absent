@@ -37,9 +37,10 @@ include "Configuraciones/Funciones.php";
 <?php include_once 'Modulos/Templates/Header_Admin.php'; ?>
 
 
-<body>
+
 
    <section id="Fondoregistro">
+   <div class="Contenido">
 <form class="formulario_usuario" action="" method="post" >
 
         <h1> Registra a tu usuario </h1>
@@ -125,8 +126,9 @@ include "Configuraciones/Funciones.php";
             </div>
             
     </form>
+            </div>
             </section>
-</body>
+
 
 
 <?php include_once 'Modulos/Templates/Footer_Admin.php'; ?>

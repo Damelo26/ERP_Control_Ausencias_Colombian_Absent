@@ -226,6 +226,13 @@
     padding: 30px;
     transition: all 0.3s ease;
 }
+.Objeto_Contenedor .ContenidoAdmin{
+    margin-top: 60px;
+    width:225px;   /*Se hace la resta con el tamaño de la barra deslizadora*/ 
+    margin-left: 225px;
+    padding: 30px;
+    transition: all 0.3s ease;
+}
 
 .Objeto_Contenedor .Contenido .Item_Contenido{
     border: 1px solid #000;    /*Color del borde del texto*/

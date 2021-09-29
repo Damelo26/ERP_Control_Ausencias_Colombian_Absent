@@ -1,7 +1,7 @@
 <?php include_once 'Modulos/Templates/Header_Admin.php'; ?>
-
-<div class="Contenido">
-    <section id="Rechazo">
+<section id="Rechazo">
+    <div class="Contenido">
+    
     <section id="Contenedor_Administrar_Historial">
         <h2><i class="fas fa-times-circle"></i> Ausencias rechazadas</h2>
         <form action="Buscar_Solicitudes_Rechazadas_Administrador.php" method="get" class="Formulario_Buscador">
