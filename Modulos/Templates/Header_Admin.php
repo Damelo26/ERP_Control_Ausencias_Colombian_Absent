@@ -25,7 +25,7 @@
     </script>
 </head>
 
-<body>
+
     <div class="Envoltura">
         <div class="Top">
             <div class="Barra_Nav">
@@ -52,7 +52,10 @@
                 </div>
             </div>
         </div>
+       <body> 
+           
         <div class="Objeto_Contenedor">
+        
             <div class="Barra_Deslizadora">
                 <div class="Barra_Deslizadora_Interna">
                     <div class="perfil">
@@ -90,7 +93,7 @@
                         </li>
                         <li>
                             <a href="Solicitudes_Ausencias_Admin.php">
-
+                
                                 <span class="icon"><i class="fas fa-envelope-open-text"></i> </span>
                                 <span class="titulo">Solicitudes</span>
                             </a>
@@ -122,3 +125,4 @@
                     </ul>
                 </div>
             </div>
+                        

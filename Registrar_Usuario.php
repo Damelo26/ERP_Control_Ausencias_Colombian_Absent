@@ -5,7 +5,7 @@ include "Configuraciones/Funciones.php";
 	if (empty($_POST['Cedula']) || empty($_POST['Primer_Nombre']) || empty($_POST['Segundo_Nombre']) || empty($_POST['Primer_Apellido']) || empty($_POST['Segundo_Apellido']) || empty($_POST['Correo'])
 	){
        
-		//$Register_alert = '<p class="msg_error">Todos los campos son obligatorios.</p>';
+		$Register_alert = '<center><p style="color:#6495ED" class="msg_error">Todos los campos son obligatorios.</p> </center>';
   
 
 		}else{
@@ -24,9 +24,9 @@ include "Configuraciones/Funciones.php";
 						$query_insert = mysqli_query($conexion, "INSERT INTO usuario(cedula, primer_nombre,	segundo_nombre, primer_apellido, segundo_apellido, direccion, numero_celular, correo, contrasena, cod_usuario, cod_cargo) 
 						VALUES('$cedula','$primernombre','$segundonombre','$primerapellido','$segundoapellido','$direccion','$celular','$correo','$contrasena','$idusuario','$cargo')");
 						if($query_insert){
-							$Register_alert='<p class = "msg_save">Usuario registrado correctamente.</p>';
+							$Register_alert='<center><p style="color:#228B22" class = "msg_save">Usuario registrado correctamente.</p></center>';
 						}else{
-							$Register_alert='<p class = "msg_error">Error al registrar el usuario.</p>';
+							$Register_alert='<center><p style="color:#B22222" class = "msg_error">Error al registrar el usuario.</p> </center>';
 						}
 					}
              
@@ -38,10 +38,12 @@ include "Configuraciones/Funciones.php";
 
 
 <body>
-<div class = "Register_alert"><?php echo isset($Register_alert) ? $Register_alert : ''; ?></div>
-   
+
+   <section id="Fondoregistro">
 <form class="formulario_usuario" action="" method="post" >
+
         <h1> Registra a tu usuario </h1>
+        <div class = "Register_alert"><?php echo isset($Register_alert) ? $Register_alert : ''; ?></div>
         <div class="contenedor_usu">
             <div class="input-contenedor_usu">
                 <input type="text" name="Cedula" id="Cedula" class="entrada" placeholder="Cedula" >
@@ -123,7 +125,7 @@ include "Configuraciones/Funciones.php";
             </div>
             
     </form>
-    
+            </section>
 </body>
 
 
