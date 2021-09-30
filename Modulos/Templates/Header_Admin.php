@@ -11,8 +11,7 @@
     <link rel="stylesheet" href="CSS/EstiloLogin.css">
     <link rel="stylesheet" href="CSS/EstiloRegistrarUsu.css">
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
-    <script src="JavaScript/Admin.js" defer></script>
-    <script src="JavaScript/Foto_Mascota.js" defer></script>
+    <script src="js/Seleccionar_Filas.js"></script>
     <script>
         $(document).ready(function() {
             $(".menu_derecho li .fas").click(function() {
@@ -23,6 +22,26 @@
             })
         })
     </script>
+    <!-- El siguiente Script es para resaltar las filas de las tablas de todas las solicitudes y seleccionarlas -->
+    
+    <script langiage="javascript" type="text/javascript">
+        // RESALTAR LAS FILAS DE LAS TABLAS AL PASAR EL MOUSE SOBRE ELLAS
+        function ResaltarFila(id_fila) {
+            document.getElementById(id_fila).style.backgroundColor = '#C0C0C0';
+        }
+        
+        // RESTABLECER EL FONDO DE LAS FILAS AL QUITAR EL FOCO
+        function RestablecerFila(id_fila) {
+            document.getElementById(id_fila).style.backgroundColor = '#FFFFFF';
+            document.getElementById(id_fila).style.cursor = 'pointer';
+        }
+        
+        // CONVERTIR LAS FILAS EN LINKS POR CADA SOLICITUD DE AUSENCIA
+        function CrearEnlace(url) {
+            location.href=url;
+        }
+    </script>
+    
 </head>
 
 
