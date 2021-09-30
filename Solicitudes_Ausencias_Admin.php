@@ -1,5 +1,5 @@
 <?php include_once 'Modulos/Templates/Header_Admin.php'; ?>
-
+<section id="Solicitud">
 <div class="Contenido">
     <section id="Contenedor_Administrar_Historial">
         <h2><i class="fas fa-tasks"></i> Solicitudes de ausencias</h2>
@@ -88,6 +88,7 @@
         <?php
         }
         ?>
+    </section>
     </section>
 </div>
 
