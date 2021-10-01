@@ -3,7 +3,7 @@
 body{
     font-family: 'Montserrat', sans-serif;;
     margin:0;
-    background: url(../img/fondogeneral.png);
+    background: url(../img/fondogeneral.gif);
      background-size:cover;
     background-attachment: fixed; 
 }
@@ -22,7 +22,22 @@ body{
 }
 
 #Rechazo{
-    background: url(../img/fondogeneral.png);
+    background: url(../img/fondoseccion.png);
+    background-size:cover;
+background-attachment: fixed;
+}
+#Aprobar{
+    background: url(../img/fondoseccion.png);
+    background-size:cover;
+background-attachment: fixed;
+}
+#Solicitud{
+    background: url(../img/fondoseccion.png);
+    background-size:cover;
+background-attachment: fixed;
+}
+#Historial{
+    background: url(../img/fondoseccion.png);
     background-size:cover;
 background-attachment: fixed;
 }

@@ -1,5 +1,5 @@
 <?php include_once 'Modulos/Templates/Header_Admin.php'; ?>
-
+<section id="Aprobar">
 <div class="Contenido">
     <section id="Contenedor_Administrar_Historial">
         <h2><i class="fas fa-clipboard-check"></i> Ausencias aprobadas</h2>
@@ -90,6 +90,7 @@
         <?php
         }
         ?>
+    </section>
     </section>
 </div>
 

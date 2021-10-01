@@ -1,5 +1,5 @@
 <?php include_once 'Modulos/Templates/Header_Admin.php'; ?>
-
+<section id="Historial">
 <div class="Contenido">
   <section id="Contenedor_Administrar_Historial">
     <h2><i class="fas fa-history"></i> Historial de solicitudes</h2>
@@ -90,6 +90,7 @@
     <?php
     }
     ?>
+  </section>
   </section>
 </div>
 
