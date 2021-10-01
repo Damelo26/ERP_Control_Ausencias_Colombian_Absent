@@ -35,7 +35,7 @@
                 while ($Datos_Tabla = mysqli_fetch_array($Busqueda_Tabla_Historial_Ausencias)) {
             ?>
                     <!-- No funcionan las funciones onMouseOver y onMouseOut, intentar hacerlas funcionar -->
-                    <tr id="fila_<?echo $Datos_Tabla['Codigo']; ?>" onMouseOver="ResaltarFila('fila_<?echo $Datos_Tabla['Codigo']; ?>');" onMouseOut="RestablecerFila('fila_<?echo $Datos_Tabla['Codigo']; ?>')" onClick="CrearEnlace('Verificar_Ausencia_Administrador.php?id=<?php echo $Datos_Tabla["Codigo"]; ?>');">
+                    <tr style="cursor: pointer;" id="fila_<?echo $Datos_Tabla['Codigo']; ?>" onClick="CrearEnlace('Verificar_Ausencia_Administrador.php?id=<?php echo $Datos_Tabla["Codigo"]; ?>');">
                             <td><img src="<?php echo $Datos_Tabla["imagen"]; ?>" alt="" class="Foto_Trabajadores_Tabla_Ausencias"></td>
                             <td><?php echo $Datos_Tabla["cedula"]; ?></td>
                             <td><?php echo $Datos_Tabla["primer_nombre"], " ", $Datos_Tabla["segundo_nombre"], " ", $Datos_Tabla["primer_apellido"], " ", $Datos_Tabla["segundo_apellido"]; ?></td>

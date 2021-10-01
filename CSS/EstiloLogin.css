@@ -544,6 +544,10 @@ table th{
 	text-align: center;
 }
 
+table tr:hover {
+  background: #ffffffff !important;
+}
+
 table tr:mth-child(odd){
 	background: #FFF;
 }

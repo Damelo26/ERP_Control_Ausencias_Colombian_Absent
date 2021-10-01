@@ -25,16 +25,6 @@
     <!-- El siguiente Script es para resaltar las filas de las tablas de todas las solicitudes y seleccionarlas -->
     
     <script langiage="javascript" type="text/javascript">
-        // RESALTAR LAS FILAS DE LAS TABLAS AL PASAR EL MOUSE SOBRE ELLAS
-        function ResaltarFila(id_fila) {
-            document.getElementById(id_fila).style.backgroundColor = '#C0C0C0';
-        }
-        
-        // RESTABLECER EL FONDO DE LAS FILAS AL QUITAR EL FOCO
-        function RestablecerFila(id_fila) {
-            document.getElementById(id_fila).style.backgroundColor = '#FFFFFF';
-            document.getElementById(id_fila).style.cursor = 'pointer';
-        }
         
         // CONVERTIR LAS FILAS EN LINKS POR CADA SOLICITUD DE AUSENCIA
         function CrearEnlace(url) {

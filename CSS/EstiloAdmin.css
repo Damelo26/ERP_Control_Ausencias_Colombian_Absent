@@ -449,3 +449,80 @@
     padding: 20px 50px;
     border: 0;
 }
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Aca creo las columnas, en total 5*/
+    gap: 1em;
+    grid-auto-rows: minmax(80px, auto);
+}
+
+.Foto_Usuario_Solicitud{
+    grid-column: 1/3;
+    grid-row: 1/3;
+}
+
+.Nombre_Usuario_Solicitud{
+    grid-column: 3/6;
+}
+
+.Cargo_Usuario_Solicitud{
+    grid-column: 1/3;
+}
+
+.Tipo_Usuario_Solicitud{
+    grid-column: 3/5;
+}
+
+.Descripcion_Usuario_Solicitud{
+    grid-column: 1/6;
+}
+
+.Celular_Usuario_Solicitud{
+    grid-column: 1/3;
+}
+
+.Email_Usuario_Solicitud{
+    grid-column: 3/6;
+}
+
+.Direccion_Usuario_Solicitud{
+    grid-column: 1/6;
+}
+
+.Documento_Usuario_Solicitud{
+    grid-column: 1/4;
+}
+
+.Opciones_Usuario_Solicitud{
+    grid-column: 4/6;
+}
+
+.Dias_Usuario_Solicitud p{
+    color: #e21313 !important;
+    font-weight: 600;
+    text-align: center;
+}
+
+.grid > div{
+    border: 1px solid #000;
+}
+
+.grid > div label{
+    color: #000;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.grid > div p{
+    color: #000;
+    font-size: 22px;
+}
+
+.Circunferencia_Foto_Usuario_Solicitud{
+    width: 50%;
+    height: 100%;
+    border-radius:50%;
+    display: block;
+    margin: auto;
+}
