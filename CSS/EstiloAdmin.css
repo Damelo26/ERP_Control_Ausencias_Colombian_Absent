@@ -612,3 +612,11 @@
     display: block;
     margin: auto;
 }
+
+.Input_Buscador_Solicitudes_Ausencias{
+    font-size: 20px;
+    width: 82%;
+    padding: 10px;
+    border: 2px solid #000 !important;
+    border-radius: .5em;
+}

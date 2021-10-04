@@ -4,7 +4,7 @@
   <section id="Contenedor_Administrar_Historial">
     <h2><i class="fas fa-history"></i> Historial de solicitudes</h2>
     <form action="Buscar_Solicitudes_Historial_Administrador.php" method="get" class="Formulario_Buscador">
-      <input type="text" name="Buscador" id="Buscador" placeholder="Buscar">
+      <input type="text" name="Buscador" id="Buscador" placeholder="Buscar" class="Input_Buscador_Solicitudes_Ausencias">
       <input type="submit" value="Buscar" class="Btn_Buscador">
     </form>
     <table>
@@ -73,11 +73,9 @@
           <?php
           if ($Pagina != 1) {
           ?>
-            <li><a href="?Pagina=<?php echo 1; ?>">|<< /a>
+            <li><a href="?Pagina=<?php echo 1; ?>">|<</a>
             </li>
-            <li><a href="?Pagina=<?php echo $Pagina - 1; ?>">
-                <<< /a>
-            </li>
+            <li><a href="?Pagina=<?php echo $Pagina - 1; ?>"><<</a></li>
           <?php
           }
           for ($i = 1; $i <= $Total_Paginas; $i++) {

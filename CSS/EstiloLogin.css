@@ -544,8 +544,12 @@ table th{
 	text-align: center;
 }
 
+table tr{
+  transition: background-color 1s;
+}
+
 table tr:hover {
-  background: #ffffffff !important;
+  background: #e0e0c9 !important;
 }
 
 table tr:mth-child(odd){
@@ -583,8 +587,16 @@ table td{
 	border: 0;
 	cursor: pointer;
 	margin-left: 10px;
-	width: 70px;
-	font-size: 14px;
+	width: 85px;
+	font-size: 18px;
+  border-radius: .5em;
+  font-weight: 600;
+  transition: background-color 1s;
+}
+
+.Formulario_Buscador .Btn_Buscador:hover{
+	background: #8dc5cc;
+  border: 2px solid #000;
 }
 
 .Foto_Trabajadores_Tabla_Ausencias{
@@ -620,6 +632,8 @@ table td{
 	display: flex;
 	justify-content: flex-end;
   color: #000;
+  font-weight: 600;
+  transition: background-color 1s;
 }
 
 .Paginador_Administrador_Tabla a, .Pagina_Seleccionada{
@@ -630,10 +644,11 @@ table td{
 	font-size: 13px;
 	text-align: center;
 	width: 40px;
+  text-decoration: none;
 }
 
 .Paginador_Administrador_Tabla a:hover{
-	background: #fff;
+	background: #8dc5cc;
   color: #000;
 }
 
