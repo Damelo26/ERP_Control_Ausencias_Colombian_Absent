@@ -14,7 +14,7 @@
                 <th>Nombre</th>
                 <th>Tipo de ausencia</th>
                 <th>Fecha</th>
-                <th>Acciones</th>
+                <th>Estado</th>
             </tr>
             <?php
             include "Configuraciones/Funciones.php";
@@ -29,7 +29,7 @@
             }
             $Desde = ($Pagina - 1) * $Total_Registros_Por_Pagina;
             $Total_Paginas = ceil($Total_Cantidad_Registros / $Total_Registros_Por_Pagina);
-            $Busqueda_Tabla_Historial_Ausencias = mysqli_query($conexion, "SELECT H_A.cod_historial_ausencias as Codigo, U.cedula, U.primer_nombre, U.segundo_nombre, U.primer_apellido, U.segundo_apellido, U.imagen, au.fecha, Tipo_au.nombre_tipo_ausencias as tipo from historial_ausencias H_A INNER JOIN usuario U ON H_A.cedula = U.cedula INNER JOIN ausencias au ON H_A.cod_ausencias = au.cod_ausencias INNER JOIN tipo_ausencias Tipo_au ON au.cod_tipo_ausencias = Tipo_au.cod_tipo_ausencias WHERE au.cod_Estado = 3 order BY au.fecha Limit $Desde,$Total_Registros_Por_Pagina");
+            $Busqueda_Tabla_Historial_Ausencias = mysqli_query($conexion, "SELECT H_A.cod_historial_ausencias as Codigo, U.cedula, U.primer_nombre, U.segundo_nombre, U.primer_apellido, U.segundo_apellido, U.imagen, au.fecha, Tipo_au.nombre_tipo_ausencias as tipo, Es.nombre as Estado from historial_ausencias H_A INNER JOIN usuario U ON H_A.cedula = U.cedula INNER JOIN ausencias au ON H_A.cod_ausencias = au.cod_ausencias INNER JOIN tipo_ausencias Tipo_au ON au.cod_tipo_ausencias = Tipo_au.cod_tipo_ausencias INNER JOIN tipo_estado Es ON Es.cod_Estado = au.cod_Estado WHERE au.cod_Estado = 3 order BY au.fecha Limit $Desde,$Total_Registros_Por_Pagina");
             $Resultado_Tabla = mysqli_num_rows($Busqueda_Tabla_Historial_Ausencias);
             if ($Resultado_Tabla > 0) {
                 while ($Datos_Tabla = mysqli_fetch_array($Busqueda_Tabla_Historial_Ausencias)) {
@@ -41,12 +41,8 @@
                             <td><?php echo $Datos_Tabla["primer_nombre"], " ", $Datos_Tabla["segundo_nombre"], " ", $Datos_Tabla["primer_apellido"], " ", $Datos_Tabla["segundo_apellido"]; ?></td>
                             <td><?php echo $Datos_Tabla["tipo"]; ?></td>
                             <td><?php echo $Datos_Tabla["fecha"]; ?></td>
-                            <td class="Link_Verificar_Ausencia">
-                                Verificar
-                                <!-- <a href="Aprobar_Ausencia_Administrador.php?id=<?php //echo $Datos_Tabla["Codigo"]; 
-                                                                                    ?>" class="Link_Aprobar_Ausencia">Aprobar </a>
-                    <a href="Rechazar_Ausencia_Administrador.php?id=<?php //echo $Datos_Tabla["Codigo"]; 
-                                                                        ?>" class="Link_Rechazar_Ausencia">Rechazar</a> -->
+                            <td class="Tabla_Solicitudes_Columna_Estado_Pendiente">
+                                <?php echo $Datos_Tabla["Estado"]; ?>
                             </td>
                     </tr>
             <?php

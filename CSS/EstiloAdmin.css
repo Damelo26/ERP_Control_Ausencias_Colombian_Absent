@@ -492,10 +492,82 @@
 
 .Documento_Usuario_Solicitud{
     grid-column: 1/4;
+    align-self: center;
 }
 
 .Opciones_Usuario_Solicitud{
     grid-column: 4/6;
+    align-self: center;
+}
+
+.Opcion_Aprobar_Usuario_Solicitud{
+    width: minmax(80px, auto);
+    height: 50px;
+    background-color: rgb(74, 212, 92);
+    border-radius: .5em;
+    cursor: pointer;
+    transition: background-color 1s;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    align-self: center;
+}
+
+.Opcion_Aprobar_Usuario_Solicitud:hover{
+    background-color: rgb(36, 150, 36);
+}
+
+.Opcion_Aprobar_Usuario_Solicitud a, .Opcion_Rechazar_Usuario_Solicitud a{
+    font-size: 22px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #fff !important;
+}
+
+.Opcion_Rechazar_Usuario_Solicitud{
+    width: minmax(80px, auto);
+    height: 50px;
+    background-color: rgb(221, 71, 71);
+    border-radius: .5em;
+    cursor: pointer;
+    transition: background-color 1s;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    align-self: center;
+}
+
+.Opcion_Rechazar_Usuario_Solicitud:hover{
+    background-color: rgb(184, 16, 16);
+}
+
+.Boton_Para_Documentos_Ausencias{
+    width: minmax(80px, auto);
+    height: 50px;
+    background-color: rgb(231, 203, 76);
+    border-radius: .5em;
+    cursor: pointer;
+    transition: background-color 1s;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+}
+
+.Boton_Para_Documentos_Ausencias:hover{
+    background-color: rgb(148, 129, 43);
+}
+
+.Boton_Para_Documentos_Ausencias a{
+    font-size: 22px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #fff !important;
 }
 
 .Dias_Usuario_Solicitud p{
@@ -505,7 +577,7 @@
 }
 
 .grid > div{
-    border: 1px solid #000;
+    /*border: 1px solid #000;*/
 }
 
 .grid > div label{
@@ -517,6 +589,20 @@
 .grid > div p{
     color: #000;
     font-size: 22px;
+}
+
+.P_Estado_Pendiente{
+    
+}
+
+.P_Estado_Rechazado{
+    color: red !important;
+    font-weight: 600 !important;
+}
+
+.P_Estado_Aprobado{
+    color: green !important;
+    font-weight: 600 !important;
 }
 
 .Circunferencia_Foto_Usuario_Solicitud{

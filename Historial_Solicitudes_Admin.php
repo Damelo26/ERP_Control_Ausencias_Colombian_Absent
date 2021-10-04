@@ -40,13 +40,23 @@
             <td><?php echo $Datos_Tabla["primer_nombre"], " ", $Datos_Tabla["segundo_nombre"], " ", $Datos_Tabla["primer_apellido"], " ", $Datos_Tabla["segundo_apellido"]; ?></td>
             <td><?php echo $Datos_Tabla["tipo"]; ?></td>
             <td><?php echo $Datos_Tabla["fecha"]; ?></td>
-            <td>
-              <!--<a href="Verificar_Ausencia_Administrador.php?id=<?php //echo $Datos_Tabla["Codigo"]; 
-                                                                    ?>" class="Link_Verificar_Ausencia">Verificar</a>
-                   <a href="Aprobar_Ausencia_Administrador.php?id=<?php //echo $Datos_Tabla["Codigo"]; 
-                                                                  ?>" class="Link_Aprobar_Ausencia">Aprobar </a>
-                  <a href="Rechazar_Ausencia_Administrador.php?id=<?php //echo $Datos_Tabla["Codigo"]; 
-                                                                  ?>" class="Link_Rechazar_Ausencia">Rechazar</a> -->
+            <td
+              <?php
+                if($Datos_Tabla["Estado"] === "Aprobado"){
+              ?>
+              class="Tabla_Solicitudes_Columna_Estado_Aprobado"
+              <?php    
+                }elseif($Datos_Tabla["Estado"] === "Rechazado"){
+              ?>
+              class="Tabla_Solicitudes_Columna_Estado_Rechazado"
+              <?php    
+                }elseif($Datos_Tabla["Estado"] === "Pendiente"){
+              ?>
+              class="Tabla_Solicitudes_Columna_Estado_Pendiente"
+              <?php    
+                }
+              ?>
+            >
               <?php echo $Datos_Tabla["Estado"]; ?>
             </td>
           </tr>

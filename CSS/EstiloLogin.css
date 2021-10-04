@@ -594,12 +594,19 @@ table td{
     /* border: 2px solid #000; Esto le crea un borde a la foto de las tablas, pero queda raro */
 }
 
-.Link_Rechazar_Ausencia{
-  color: rgb(238, 106, 74);
+.Tabla_Solicitudes_Columna_Estado_Rechazado{
+  color: red !important;
+  font-weight: 600 !important;
 }
 
-.Link_Aprobar_Ausencia, .Link_Verificar_Ausencia{
-  color: rgb(12, 206, 109);
+.Tabla_Solicitudes_Columna_Estado_Pendiente{
+  color: blue !important;
+  font-weight: 600 !important;
+}
+
+.Tabla_Solicitudes_Columna_Estado_Aprobado{
+  color: green !important;
+  font-weight: 600 !important;
 }
 
 .Paginador_Administrador_Tabla ul{
