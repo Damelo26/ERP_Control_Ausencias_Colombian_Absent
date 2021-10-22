@@ -96,13 +96,12 @@
                     <ul>
                         <li>
                             <a href="Registrar_Usuario.php" class="active">
-                                <span class="icon"><i class="fas fa-chart-bar"></i> </span>
+                                <span class="icon"><i class="fas fa-chart-bar"></i></span>
                                 <span class="titulo">Registrar usuario</span>
                             </a>
                         </li>
                         <li>
                             <a href="Solicitudes_Ausencias_Admin.php">
-                
                                 <span class="icon"><i class="fas fa-envelope-open-text"></i> </span>
                                 <span class="titulo">Solicitudes</span>
                             </a>
@@ -113,12 +112,6 @@
                                 <span class="titulo">Historial</span>
                             </a>
                         </li>
-                        <!-- <li>
-                                <a href="Adoptado_Admin.php">
-                                    <span class="icon"><i class="fas fa-chalkboard-teacher"></i></span>
-                                    <span class="titulo">Seguimiento</span>
-                                </a>
-                            </li> -->
                         <li>
                             <a href="Solicitudes_Aprobadas_Admin.php">
                                 <span class="icon"><i class="fas fa-clipboard-check"></i> </span>

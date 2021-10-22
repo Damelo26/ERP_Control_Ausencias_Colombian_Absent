@@ -198,12 +198,15 @@
     margin-bottom: 1px;
     white-space: nowrap;
     transition: all 0.3s ease;
+    transition: background-color 1s;
+    text-decoration: none;
 }
 
 .Objeto_Contenedor .Barra_Deslizadora ul li a .fas{
     color: #fff;
     margin-right: 15px;
     font-size: 28px;
+    transition: background-color 1s;
 }
 
 .Objeto_Contenedor .Barra_Deslizadora ul li a span{
