@@ -2,13 +2,13 @@
 
 <div class="Contenido">
     <section id="Contenedor_Administrar_Historial">
-    <?php
-            $Buscador = strtolower($_REQUEST['Buscador']);
-            if(empty($Buscador)){
-                header('Location: Solicitudes_Aprobadas_Admin.php');
-            }
-    ?>      
-    <h2><i class="fas fa-clipboard-check"></i> Ausencias aprobadas</h2>
+        <?php
+        $Buscador = strtolower($_REQUEST['Buscador']);
+        if (empty($Buscador)) {
+            header('Location: Solicitudes_Aprobadas_Admin.php');
+        }
+        ?>
+        <h2><i class="fas fa-clipboard-check"></i> Ausencias aprobadas</h2>
         <form action="Buscar_Solicitudes_Aprobadas_Administrador.php" method="get" class="Formulario_Buscador">
             <input type="text" name="Buscador" id="Buscador" placeholder="Buscar">
             <input type="submit" value="Buscar" class="Btn_Buscador">

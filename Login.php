@@ -39,11 +39,10 @@ if (isset($_POST['btnacceso'])) {
           $_SESSION['contrasena'] = $data['contrasena'];
           $_SESSION['cod_usuario'] = $data['cod_usuario'];
           $_SESSION['cod_cargo'] = $data['cod_cargo'];
-
           if ($_SESSION['cod_usuario'] == 0) {
             header('location: Admin.php');
           } else if ($_SESSION['cod_usuario'] != 0) {
-            header('location: index.php');
+            header('location: Solicitud_Empleado.php');
           }
         } else {
           $alert = 'El usuario o la contraseña son incorrectos';
@@ -53,15 +52,12 @@ if (isset($_POST['btnacceso'])) {
     } //ELSE
   } //IF INGRESAR
 } //IF BOTON ACCESO
-
 ?>
 
 <?php include_once 'Modulos/Templates/header.php'; ?>
-
 <div class="container">
   <div class="forms-container">
     <div class="signin-signup">
-
       <form action="#" class="sign-in-form form_login_v" method="POST">
         <!--ESTE ES EL FORMULARIO DE INICIAR SESION-->
         <h2 class="title">Iniciar sesion</h2> <!-- Título de la sección de login que dice "Iniciar sesion" -->
