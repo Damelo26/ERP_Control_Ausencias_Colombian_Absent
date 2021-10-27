@@ -42,6 +42,7 @@ if (isset($_POST['btnacceso'])) {
           if ($_SESSION['cod_usuario'] == 0) {
             header('location: Admin.php');
           } else if ($_SESSION['cod_usuario'] != 0) {
+            
             header('location: Solicitud_Empleado.php');
           }
         } else {
