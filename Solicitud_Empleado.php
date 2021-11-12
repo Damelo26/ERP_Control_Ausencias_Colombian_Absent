@@ -32,6 +32,9 @@ if (!empty($_POST)) {
                     $alerta_type = 'success';
                     $alerta_titulo = 'Solicitud satisfactoria';
                     $alerta = 'La solicitud de ausencia se almacenó correctamente';
+                    $Cod_Solicitud_Ausencia = mysqli_query($conexion, "SELECT cod_ausencias from ausencias WHERE documento = $archivo AND fecha = $newDate AND descripcion = $descripcion AND dias_ausentes = $dias_ausente AND cod_tipo_ausencias = $tipos_ausenias AND cod_Estado = $cod_estado");
+                    //$Resultado =  mysqli_fetch_array($Cod_Solicitud_Ausencia);
+                    $query_insert_historial = mysqli_query($conexion, "INSERT INTO historial_ausencias(cod_ausencias, cedula) VALUES ('$Cod_Solicitud_Ausencia ','$cedula');");
                 } else {
                     $alerta_type = 'error';
                     $alerta_titulo = 'Solicitud fracasada';

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="shortcut icon" type="image/x-icon" href="img/logo.png">
@@ -23,48 +22,44 @@
         })
     </script>
     <!-- El siguiente Script es para resaltar las filas de las tablas de todas las solicitudes y seleccionarlas -->
-    
     <script langiage="javascript" type="text/javascript">
-        
         // CONVERTIR LAS FILAS EN LINKS POR CADA SOLICITUD DE AUSENCIA
         function CrearEnlace(url) {
-            location.href=url;
+            location.href = url;
         }
     </script>
-    
 </head>
-
-
-    <div class="Envoltura">
-        <div class="Top">
-            <div class="Barra_Nav">
-                <div class="Contenido_Barra">
-                    <div class="Linea_Uno"></div>
-                    <div class="Linea_Dos"></div>
-                    <div class="Linea_Tres"></div>
-                </div>
-            </div>
-            <div class="menuadmin">
-                <a href="index.php">
-                    <div class="logo">
-                        Colombia Absent
-                    </div>
-                </a>
-                <div class="c">
-                    <ul>
-                        <li><i class="fas fa-user-circle"></i> <!-- Este es el muñequito -->
-                            <div class="menu_perfil">
-                                <div class="item_menu_perfil"><a href="Modulos/Exit.php">Salir</a></div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
+<div class="Envoltura">
+    <div class="Top">
+        <div class="Barra_Nav">
+            <div class="Contenido_Barra">
+                <div class="Linea_Uno"></div>
+                <div class="Linea_Dos"></div>
+                <div class="Linea_Tres"></div>
             </div>
         </div>
-       <body> 
-           
+        <div class="menuadmin">
+            <a href="index.php">
+                <div class="logo">
+                    Colombia Absent
+                </div>
+            </a>
+            <div class="c">
+                <ul>
+                    <li><i class="fas fa-user-circle"></i> <!-- Este es el muñequito -->
+                        <div class="menu_perfil">
+                            <div class="item_menu_perfil"><a href="Modulos/Exit.php">Salir</a></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <body>
+
         <div class="Objeto_Contenedor">
-        
+
             <div class="Barra_Deslizadora">
                 <div class="Barra_Deslizadora_Interna">
                     <div class="perfil">
@@ -88,9 +83,15 @@
                             !-->
                         </div>
                         <div class="Info_Perfil">
-                            <p>Bienvenido</p>
-                            <!--  <p class = "Perfil_Nombre"><?php echo $_SESSION['Primer_Nombre'], ' ', $_SESSION['Primer_Apellido']; ?></p>
-                            !-->
+                            <p>Bienvenido(a)</p>
+                            <p class="Perfil_Nombre">
+                                <?php
+                                $datos_usuario = file_get_contents("././usuario.json");
+                                $json_usuario = json_decode($datos_usuario, true);
+                                echo $json_usuario["primer_nombre"] . " " . $json_usuario["primer_apellido"];
+                                ?>
+                            </p>
+                            </p>
                         </div>
                     </div>
                     <ul>
@@ -127,4 +128,3 @@
                     </ul>
                 </div>
             </div>
-                        

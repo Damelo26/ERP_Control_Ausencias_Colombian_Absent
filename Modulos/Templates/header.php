@@ -18,12 +18,8 @@ if (!isset($_SESSION['ID_Rol'])) {
 	<meta charset="UTF-8">
 	<link rel="shortcut icon" type="image/x-icon" href="img/logo.png">
 	<link rel="stylesheet" type="text/css" href="CSS/EstiloLogin.css">
-	<link rel="stylesheet" type="text/css" href="CSS/EstiloContacto.css">
 	<link rel="stylesheet" href="CSS/Estilo.css">
 	<link rel="stylesheet" href="CSS/Styleslider.css">
-	<link rel="stylesheet" href="CSS/EstiloRegistrar_Admin.css">
-	<link rel="stylesheet" href="CSS/Estilos_Adopta.css" media="screen" title="no title">
-	<link rel="stylesheet" href="CSS/Estilos_Adoptados.css" media="screen" title="no title">
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;1,300;1,400&family=Oswald:wght@200;300;400;500;600;700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 	<title>Colombian Absent</title>
 	<link rel="stylesheet" href="CSS/normalize.css">
@@ -32,11 +28,8 @@ if (!isset($_SESSION['ID_Rol'])) {
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 	<!--Desde aqui agregue-->
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-	<link rel="stylesheet" href="/resources/demos/style.css">
 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-	<script src="JavaScript/FAQ.js" defer></script>
-	<link rel="stylesheet" href="CSS/EstiloFAQ.css">
 	
 	<script>
 		function enableSending() {

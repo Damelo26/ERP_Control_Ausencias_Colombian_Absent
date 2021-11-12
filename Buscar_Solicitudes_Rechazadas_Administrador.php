@@ -10,7 +10,7 @@
     ?>
     <h2><i class="fas fa-times-circle"></i> Ausencias rechazadas</h2>
         <form action="Buscar_Solicitudes_Rechazadas_Administrador.php" method="get" class="Formulario_Buscador">
-            <input type="text" name="Buscador" id="Buscador" placeholder="Buscar">
+            <input type="text" name="Buscador" id="Buscador" placeholder="Buscar" class="Input_Buscador_Solicitudes_Ausencias">
             <input type="submit" value="Buscar" class="Btn_Buscador">
         </form>
         <table>
@@ -46,13 +46,7 @@
                         <td><?php echo $Datos_Tabla["primer_nombre"], " ", $Datos_Tabla["segundo_nombre"], " ", $Datos_Tabla["primer_apellido"], " ", $Datos_Tabla["segundo_apellido"]; ?></td>
                         <td><?php echo $Datos_Tabla["tipo"]; ?></td>
                         <td><?php echo $Datos_Tabla["fecha"]; ?></td>
-                        <td>
-                            <!--<a href="Verificar_Ausencia_Administrador.php?id=<?php //echo $Datos_Tabla["Codigo"]; 
-                                                                                    ?>" class="Link_Verificar_Ausencia">Verificar</a>
-                   <a href="Aprobar_Ausencia_Administrador.php?id=<?php //echo $Datos_Tabla["Codigo"]; 
-                                                                    ?>" class="Link_Aprobar_Ausencia">Aprobar </a>
-                  <a href="Rechazar_Ausencia_Administrador.php?id=<?php //echo $Datos_Tabla["Codigo"]; 
-                                                                    ?>" class="Link_Rechazar_Ausencia">Rechazar</a> -->
+                        <td class="Tabla_Solicitudes_Columna_Estado_Rechazado">
                             <?php echo $Datos_Tabla["Estado"]; ?>
                         </td>
                     </tr>
@@ -69,10 +63,10 @@
                     <?php
                     if ($Pagina != 1) {
                     ?>
-                        <li><a href="?Pagina=<?php echo 1; ?>">|<< /a>
+                        <li><a href="?Pagina=<?php echo 1; ?>">|<</a>
                         </li>
                         <li><a href="?Pagina=<?php echo $Pagina - 1; ?>">
-                                <<< /a>
+                                <<</a>
                         </li>
                     <?php
                     }
