@@ -1,4 +1,5 @@
 <?php include_once 'Modulos/Templates/Header_Admin.php'; ?>
+
 <section id="Historial">
 <div class="Contenido">
   <section id="Contenedor_Administrar_Historial">
@@ -43,8 +44,10 @@
             <td
               <?php
                 if($Datos_Tabla["Estado"] === "Aprobado"){
+                  
               ?>
               class="Tabla_Solicitudes_Columna_Estado_Aprobado"
+              
               <?php    
                 }elseif($Datos_Tabla["Estado"] === "Rechazado"){
               ?>

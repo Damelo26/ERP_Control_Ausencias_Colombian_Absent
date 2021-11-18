@@ -1,6 +1,11 @@
 <?php include_once 'Modulos/Templates/header.php';
 include "Configuraciones/Funciones.php";
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
+require 'PHPMailer/Exception.php';
+require 'PHPMailer/PHPMailer.php';
+require 'PHPMailer/SMTP.php';
 $dato = '';
 $cedula = $_SESSION['cedula'];
 $query = mysqli_query($conexion, "SELECT (c.nombre_cargo) as job, (u.correo) as email FROM usuario u INNER JOIN cargo c on c.cod_cargo = u.cod_cargo where u.cedula = $cedula LIMIT 1;");
@@ -35,6 +40,31 @@ if (!empty($_POST)) {
                     $Cod_Solicitud_Ausencia = mysqli_query($conexion, "SELECT cod_ausencias from ausencias WHERE documento = $archivo AND fecha = $newDate AND descripcion = $descripcion AND dias_ausentes = $dias_ausente AND cod_tipo_ausencias = $tipos_ausenias AND cod_Estado = $cod_estado");
                     //$Resultado =  mysqli_fetch_array($Cod_Solicitud_Ausencia);
                     $query_insert_historial = mysqli_query($conexion, "INSERT INTO historial_ausencias(cod_ausencias, cedula) VALUES ('$Cod_Solicitud_Ausencia ','$cedula');");
+                   
+                    // $query = mysqli_query($conexion, "SELECT correo FROM usuario WHERE cedula = '$cedula'");
+                    $mail = new PHPMailer(true);
+
+                    try {
+                       
+                        $mail->SMTPDebug = 0;                      
+                        $mail->isSMTP();                                           
+                        $mail->Host       = 'smtp.gmail.com';                     
+                        $mail->SMTPAuth   = true;                                   
+                        $mail->Username   = 'colombiabsent@gmail.com';                     
+                        $mail->Password   = 'colombia1234.';                               
+                        $mail->SMTPSecure = 'tls';            
+                        $mail->Port       = 587;                                    
+                        $mail->setFrom('colombiabsent@gmail.com', 'Colombia Absent');
+                        $mail->addAddress($dato['email']);     
+                        $mail->isHTML(true);                                 
+                        $mail->Subject = 'Confirmacion envio solicitud';
+                        $mail->Body    = '¡Hola! Este mensaje tiene como fin confirmar que la solicitud de tu ausencia ha sido enviada, por favor espera pronta respuesta de aceptación o rechazo. Gracias.';
+                        $mail->send();
+                       
+                    } catch (Exception $e) {
+                        
+                    }
+                   
                 } else {
                     $alerta_type = 'error';
                     $alerta_titulo = 'Solicitud fracasada';
@@ -233,7 +263,7 @@ if (!empty($_POST)) {
 
     } else {
         toastr.success('<?php echo isset($alerta) ? $alerta : '' ?>', '<?php echo isset($alerta_titulo) ? $alerta_titulo : '' ?>', opciones);
-
+       
     }
 </script>
 
