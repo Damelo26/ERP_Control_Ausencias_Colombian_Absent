@@ -13,6 +13,7 @@ $result = mysqli_num_rows($query);
 if ($result > 0) {
     $dato = mysqli_fetch_array($query);
 }
+//print($_POST['descripcion']);
 if (!empty($_POST)) {
     if (!isset($_SESSION)) {
         session_start();
@@ -32,39 +33,39 @@ if (!empty($_POST)) {
                 $newDate = date("Y-m-d", strtotime($fecha_inicio));
                 $dias_ausente = $_POST['xfecha'];
                 $cod_estado = 3;
-                $query_insert = mysqli_query($conexion, "INSERT INTO ausencias(fecha,documento,descripcion,dias_ausentes,cod_tipo_ausencias,cod_Estado) VALUES ('$newDate','$archivo','$descripcion','$dias_ausente','$tipos_ausenias','$cod_estado');");
+                // $query_insert = false;
+               $query_insert = mysqli_query($conexion, "INSERT INTO ausencias(fecha,documento,descripcion,dias_ausentes,cod_tipo_ausencias,cod_Estado) VALUES ('$newDate','$archivo','$descripcion','$dias_ausente','$tipos_ausenias','$cod_estado');");
                 if ($query_insert) {
-                    $alerta_type = 'success';
-                    $alerta_titulo = 'Solicitud satisfactoria';
-                    $alerta = 'La solicitud de ausencia se almacenó correctamente';
-                    $Cod_Solicitud_Ausencia = mysqli_query($conexion, "SELECT cod_ausencias from ausencias WHERE documento = $archivo AND fecha = $newDate AND descripcion = $descripcion AND dias_ausentes = $dias_ausente AND cod_tipo_ausencias = $tipos_ausenias AND cod_Estado = $cod_estado");
-                    //$Resultado =  mysqli_fetch_array($Cod_Solicitud_Ausencia);
-                    $query_insert_historial = mysqli_query($conexion, "INSERT INTO historial_ausencias(cod_ausencias, cedula) VALUES ('$Cod_Solicitud_Ausencia ','$cedula');");
-                   
-                    // $query = mysqli_query($conexion, "SELECT correo FROM usuario WHERE cedula = '$cedula'");
-                    $mail = new PHPMailer(true);
+                    $last_id = mysqli_insert_id($conexion);
+                    $query_insert_historial = mysqli_query($conexion, "INSERT INTO historial_ausencias(cod_ausencias,cedula) VALUES ('$last_id','$cedula');");
+                    if ($query_insert_historial) {
 
-                    try {
-                       
-                        $mail->SMTPDebug = 0;                      
-                        $mail->isSMTP();                                           
-                        $mail->Host       = 'smtp.gmail.com';                     
-                        $mail->SMTPAuth   = true;                                   
-                        $mail->Username   = 'colombiabsent@gmail.com';                     
-                        $mail->Password   = 'colombia1234.';                               
-                        $mail->SMTPSecure = 'tls';            
-                        $mail->Port       = 587;                                    
-                        $mail->setFrom('colombiabsent@gmail.com', 'Colombia Absent');
-                        $mail->addAddress($dato['email']);     
-                        $mail->isHTML(true);                                 
-                        $mail->Subject = 'Confirmacion envio solicitud';
-                        $mail->Body    = '¡Hola! Este mensaje tiene como fin confirmar que la solicitud de tu ausencia ha sido enviada, por favor espera pronta respuesta de aceptación o rechazo. Gracias.';
-                        $mail->send();
-                       
-                    } catch (Exception $e) {
-                        
+                        $alerta_type = 'success';
+                        $alerta_titulo = 'Solicitud satisfactoria';
+                        $alerta = 'La solicitud de ausencia se almacenó correctamente';
+                        // $Cod_Solicitud_Ausencia = mysqli_query($conexion, "SELECT cod_ausencias from ausencias WHERE documento = $archivo AND fecha = $newDate AND descripcion = $descripcion AND dias_ausentes = $dias_ausente AND cod_tipo_ausencias = $tipos_ausenias AND cod_Estado = $cod_estado");
+                        // //$Resultado =  mysqli_fetch_array($Cod_Solicitud_Ausencia);
+                        // $query_insert_historial = mysqli_query($conexion, "INSERT INTO historial_ausencias(cod_ausencias, cedula) VALUES ('$Cod_Solicitud_Ausencia ','$cedula');");
+                        // // $query = mysqli_query($conexion, "SELECT correo FROM usuario WHERE cedula = '$cedula'");
+                        $mail = new PHPMailer(true);
+                        try {
+                            $mail->SMTPDebug = 0;
+                            $mail->isSMTP();
+                            $mail->Host       = 'smtp.gmail.com';
+                            $mail->SMTPAuth   = true;
+                            $mail->Username   = 'colombiabsent@gmail.com';
+                            $mail->Password   = 'colombia1234.';
+                            $mail->SMTPSecure = 'tls';
+                            $mail->Port       = 587;
+                            $mail->setFrom('colombiabsent@gmail.com', 'Colombia Absent');
+                            $mail->addAddress($dato['email']);
+                            $mail->isHTML(true);
+                            $mail->Subject = 'Confirmacion envio solicitud';
+                            $mail->Body    = '¡Hola! Este mensaje tiene como fin confirmar que la solicitud de tu ausencia ha sido enviada, por favor espera pronta respuesta de aceptación o rechazo. Gracias.';
+                            $mail->send();
+                        } catch (Exception $e) {
+                        }
                     }
-                   
                 } else {
                     $alerta_type = 'error';
                     $alerta_titulo = 'Solicitud fracasada';
@@ -78,12 +79,9 @@ if (!empty($_POST)) {
         $alerta = 'Debe cargar un archivo que valide su ausencia';
     }
 }
-
 ?>
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src="main.js"></script>
@@ -263,9 +261,9 @@ if (!empty($_POST)) {
 
     } else {
         toastr.success('<?php echo isset($alerta) ? $alerta : '' ?>', '<?php echo isset($alerta_titulo) ? $alerta_titulo : '' ?>', opciones);
-       
-    }
-</script>
 
+    }
+   
+</script>
 
 <?php include_once 'Modulos/Templates/footer.php'; ?>
