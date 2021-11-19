@@ -1,17 +1,63 @@
 <?php include_once 'Modulos/Templates/Header_Admin.php'; ?>
 <?php
 include "Configuraciones/Funciones.php";
-if (empty($_GET['id'])) {
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require 'PHPMailer/Exception.php';
+require 'PHPMailer/PHPMailer.php';
+require 'PHPMailer/SMTP.php';
+$cuerpo_mensaje= '';
+
+if (empty($_GET['id'])){
     header('Location: Admin.php');
 }
 $ID_Solicitud = $_GET['id'];
 if (!empty($_GET['estado'])) { //Actualiza el nuevo estado de la solicitud
     $ID_Estado = $_GET['estado'];
+    if($ID_Estado == 1){
+        $Estado_Correo = "Aprobado";
+       $cuerpo_mensaje="Hola! Desde colombia Absent te damos a conocer que tu solicitud está actualmente aprobada";
+    }elseif($ID_Estado == 2){
+        $Estado_Correo = "Rechazado";
+        $cuerpo_mensaje="Hola! Desde colombia Absent te damos a conocer que tu solicitud está actualmente rechazada";
+    }elseif($ID_Estado == 3){
+        $Estado_Correo = "Pendiente";
+       
+    }
     $query_update = mysqli_query($conexion, "UPDATE ausencias INNER JOIN historial_ausencias H ON ausencias.cod_ausencias = H.cod_ausencias SET ausencias.cod_Estado = '$ID_Estado' WHERE H.cod_historial_ausencias = '$ID_Solicitud'");
+    $query = mysqli_query($conexion, "SELECT H_A.cod_historial_ausencias as Codigo, U.cedula, U.primer_nombre, U.segundo_nombre, U.primer_apellido, U.segundo_apellido,U.imagen, U.direccion, U.numero_celular as celular, U.correo as email, au.fecha, au.documento, au.descripcion, au.dias_ausentes, Tipo_au.nombre_tipo_ausencias as tipo, c.nombre_cargo as cargo, Es.cod_Estado, Es.nombre as estado from historial_ausencias H_A INNER JOIN usuario U ON H_A.cedula = U.cedula INNER JOIN ausencias au ON H_A.cod_ausencias = au.cod_ausencias INNER JOIN tipo_ausencias Tipo_au ON au.cod_tipo_ausencias = Tipo_au.cod_tipo_ausencias INNER JOIN cargo c on c.cod_cargo = U.cod_cargo INNER JOIN tipo_estado Es ON Es.cod_Estado = au.cod_Estado WHERE H_A.cod_historial_ausencias = $ID_Solicitud");
+    $result = mysqli_num_rows($query);
+    if($result>0){
+    $Datos_Solicitud = mysqli_fetch_array($query);
+ }   
+ 
     if ($query_update) {
         $alerta_type = 'success';
         $alerta_titulo = 'Actualización satisfactoria';
         $alerta = 'La actualización de la solicitud fue satisfactoria';
+        $mail = new PHPMailer(true);
+     
+        try {
+           
+            $mail->SMTPDebug = 0;                      
+            $mail->isSMTP();                                           
+            $mail->Host       = 'smtp.gmail.com';                     
+            $mail->SMTPAuth   = true;                                   
+            $mail->Username   = 'colombiabsent@gmail.com';                     
+            $mail->Password   = 'colombia1234.';                               
+            $mail->SMTPSecure = 'tls';            
+            $mail->Port       = 587;                                    
+            $mail->setFrom('colombiabsent@gmail.com', 'Colombia Absent');
+            $mail->addAddress($Datos_Solicitud['email']);    
+            $mail->isHTML(true);                                 
+            $mail->Subject = 'Estado de la solicitud de ausencia';
+            $mail->Body    = $cuerpo_mensaje;
+            $mail->send();
+           
+        } catch (Exception $e) {
+            
+        }
     } else {
         $alerta_type = 'error';
         $alerta_titulo = 'Actualización fracasada';
