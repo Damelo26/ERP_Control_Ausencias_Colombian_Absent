@@ -94,7 +94,7 @@
                             </p>
                         </div>
                     </div>
-                    <ul>
+                    <ul> 
                         <li>
                             <a href="Registrar_Usuario.php" class="active">
                                 <span class="icon"><i class="fas fa-chart-bar"></i></span>
@@ -123,6 +123,12 @@
                             <a href="Solicitudes_Rechazadas_Admin.php">
                                 <span class="icon"><i class="fas fa-times-circle"></i> </span>
                                 <span class="titulo">Rechazados</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Estadistica_Administrador.php" class="active">
+                                <span class="icon"><i class="fas fa-chart-bar"></i></span>
+                                <span class="titulo">Estadisticos</span>
                             </a>
                         </li>
                     </ul>

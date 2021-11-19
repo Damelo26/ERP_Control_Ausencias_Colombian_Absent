@@ -268,7 +268,7 @@
     margin: auto;
 }
 
-.Contenido_Cartas_Estadisticos .Carta_Estadisticos_Adoptados, .Contenido_Cartas_Estadisticos .Carta_Estadisticos_Adopcion, .Contenido_Cartas_Estadisticos .Carta_Estadisticos_Proceso, .Contenido_Cartas_Estadisticos .Carta_Estadisticos_Usuarios{
+.Contenido_Cartas_Estadisticos .Carta_Estadisticos_Aprobados, .Contenido_Cartas_Estadisticos .Carta_Estadisticos_Rechazados, .Contenido_Cartas_Estadisticos .Carta_Estadisticos_Pendientes, .Contenido_Cartas_Estadisticos .Carta_Estadisticos_Usuarios{
     width: 215px;
     height: auto;
     border-radius: 8px;
@@ -279,20 +279,20 @@
     transition: all 0.25s;
 }
 
-.Contenido_Cartas_Estadisticos .Carta_Estadisticos_Adoptados{
+.Contenido_Cartas_Estadisticos .Carta_Estadisticos_Aprobados{
     background: rgb(74, 212, 92);
 }
 
-.Contenido_Cartas_Estadisticos .Carta_Estadisticos_Adopcion{
-    background: rgb(236, 214, 90);
+.Contenido_Cartas_Estadisticos .Carta_Estadisticos_Rechazados{
+    background: rgb(231, 82, 82);
 }
 
-.Contenido_Cartas_Estadisticos .Carta_Estadisticos_Proceso{
-    background: rgb(209, 134, 72);
+.Contenido_Cartas_Estadisticos .Carta_Estadisticos_Pendientes{
+    background: rgb(75, 146, 226);
 }
 
 .Contenido_Cartas_Estadisticos .Carta_Estadisticos_Usuarios{
-    background: rgb(75, 146, 226);
+    background: rgb(209, 134, 72);
 }
 .Contenido_Cartas_Estadisticos .Carta_Estadisticos_Adoptados:hover, .Contenido_Cartas_Estadisticos .Carta_Estadisticos_Adopcion:hover, .Contenido_Cartas_Estadisticos .Carta_Estadisticos_Proceso:hover,.Contenido_Cartas_Estadisticos .Carta_Estadisticos_Usuarios:hover{
     transform: translateY(-15px);
@@ -396,13 +396,13 @@
     width: 100%;
     font-size: 14pt;
     padding: 5px;
-    border: 1px solid #85929e;
+    border: 2px solid #000000;
     border-radius: 7px;
     margin: 7px;
 }
 
 .Btn_Fecha_Search{
-    color: #ffffff;
+    color: #000000;
     padding: 5px;
     width:100px;
     text-align: center;
