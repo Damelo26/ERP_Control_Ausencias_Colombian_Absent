@@ -85,7 +85,7 @@
 }
 
 .Top .menuadmin .menu_derecho ul li .fas{
-    font-size: 40px;   /*Tamaño del logo de administrador*/
+    font-size: 90px;   /*Tamaño del logo de administrador*/
     cursor: pointer;
     cursor: #000; 
     color: #353535;    /*Color del logo del administrador*/  
@@ -622,4 +622,11 @@
     padding: 10px;
     border: 2px solid #000 !important;
     border-radius: .5em;
+}
+#inicio{
+    background-image: url(../img/board.png);
+    background-repeat:no-repeat ;
+    background-size: cover;
+	width: 1350px;
+	height: 480px;
 }

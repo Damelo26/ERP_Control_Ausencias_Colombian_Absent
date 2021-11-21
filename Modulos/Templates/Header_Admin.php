@@ -46,7 +46,7 @@
             </a>
             <div class="c">
                 <ul>
-                    <li><i class="fas fa-user-circle"></i> <!-- Este es el muñequito -->
+                    <li><i class="fas fa-door-open"></i> <!-- Este es el muñequito -->
                         <div class="menu_perfil">
                             <div class="item_menu_perfil"><a href="Modulos/Exit.php">Salir</a></div>
                         </div>
@@ -97,7 +97,7 @@
                     <ul> 
                         <li>
                             <a href="Registrar_Usuario.php" class="active">
-                                <span class="icon"><i class="fas fa-chart-bar"></i></span>
+                                <span class="icon"><i class="fas fa-child"></i></span>
                                 <span class="titulo">Registrar usuario</span>
                             </a>
                         </li>
