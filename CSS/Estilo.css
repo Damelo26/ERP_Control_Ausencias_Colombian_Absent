@@ -19,6 +19,13 @@ body {
 
   /*font-family: 'Open Sans', sans-serif;*/
 }
+#inicio{
+  background-image: url(../img/fondogeneral.gif);
+  background-repeat:no-repeat ;
+  background-size: cover;
+width: 1351px;
+height: 700px;
+}
 .header {
   background: #bff0f6;
   height: 18vh;
