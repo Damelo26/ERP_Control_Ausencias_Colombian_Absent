@@ -4,7 +4,7 @@ if (!isset($_SESSION)) {
 }
 if (!isset($_SESSION['ID_Rol'])) {
 	$imagen = "img/Imagenes_Perfil/logo_perfil.png";
-	$usuario = "Invitado";
+	$usuario = "";
 } else {
 	if ($_SESSION['ID_Rol'] > 0) {
 		$usuario = $_SESSION['Primer_Nombre'] . " " . $_SESSION['Primer_Apellido'];
