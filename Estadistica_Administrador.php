@@ -141,7 +141,7 @@
    Morris.Donut({
   element: 'donut-example',
   data: <?php echo $DatosDonut; ?>,
-  colors: ['rgb(74, 212, 92)','rgb(251, 91, 57)', 'rgb(57, 157, 251)'],
+  colors: ['rgb(57, 157, 251)','rgb(251, 91, 57)', 'rgb(74, 212, 92)'],
   resize: true
 });
 </script>

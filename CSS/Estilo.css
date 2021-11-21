@@ -55,18 +55,19 @@ body {
   padding: 0 15px;
 }
 
-.perfil .imagen img {
-  width: 40px; /*Tamaño de la foto de perfil*/
+.imagen_perfil_index{
+  width: 75px;
+  height: 75px;
+  border-radius:50%;
+  display: block;
+  margin: auto;
 }
+
 .perfil .Perfil_Nombre {
-  font-size: 13px; /*Tamaño de fuente del nombre del usuario*/
+  font-size: 15px; /*Tamaño de fuente del nombre del usuario*/
   color: rgb(55, 53, 58); /*Color del nombre del usuario"*/
   margin-bottom: 1px;
   line-height: 0.1px;
-}
-
-.perfil .Perfil_Nombre:hover {
-  color: #fff; /*Color del nombre del usuario"*/
 }
 
 .contenedor {

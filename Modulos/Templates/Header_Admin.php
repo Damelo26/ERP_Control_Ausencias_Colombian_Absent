@@ -1,3 +1,7 @@
+<?php
+    $datos_usuario = file_get_contents("././usuario.json");
+    $json_usuario = json_decode($datos_usuario, true);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -79,16 +83,13 @@
                                 }
                             }
                             ?>
-                            <!-- <img src = "<?php echo $_SESSION['Imagen']; ?>" alt = "profile_pic">
-                            !-->
                         </div>
                         <div class="Info_Perfil">
                             <p>Bienvenido(a)</p>
+                            <img src = "<?php echo $json_usuario["imagen"]; ?>" alt = "" class="Imagen_Menu_Izquierdo_Admin">
                             <p class="Perfil_Nombre">
                                 <?php
-                                $datos_usuario = file_get_contents("././usuario.json");
-                                $json_usuario = json_decode($datos_usuario, true);
-                                echo $json_usuario["primer_nombre"] . " " . $json_usuario["primer_apellido"];
+                                    echo $json_usuario["primer_nombre"] . " " . $json_usuario["primer_apellido"];
                                 ?>
                             </p>
                             </p>

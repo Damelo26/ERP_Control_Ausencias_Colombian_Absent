@@ -1,13 +1,17 @@
 <?php $alert = '';
 
-$json_string = '';
+$datos_usuario = file_get_contents("usuario.json");
+$json_usuario = json_decode($datos_usuario, true);
 
 session_start();
 include "Configuraciones/Funciones.php";
 
 if (!empty($_SESSION['active'])) {
   if ($json_usuario['cod_usuario'] != 0) {
-    header('location: index.php');
+    header('location: Solicitud_Empleado.php');
+  }
+  if ($json_usuario['cod_usuario'] == 0) {
+    header('location: Admin.php');
   }
 }
 
@@ -95,8 +99,7 @@ if (isset($_POST['btnacceso'])) {
   <div class="forms-container">
     <div class="signin-signup">
 
-    <div class="alert"><?php 
-    echo 'Hola'; ?>
+    <div class="alert">
     </div>
       <form action="#" class="sign-in-form form_login_v" method="POST">
         <!--ESTE ES EL FORMULARIO DE INICIAR SESION-->

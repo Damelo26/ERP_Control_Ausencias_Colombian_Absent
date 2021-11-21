@@ -1,15 +1,17 @@
 <?php
+$datos_usuario = file_get_contents("././usuario.json");
+$json_usuario = json_decode($datos_usuario, true);
 if (!isset($_SESSION)) {
 	session_start();
 }
-if (!isset($_SESSION['ID_Rol'])) {
+if(isset($json_usuario["cod_usuario"])){
+	if ($json_usuario["cod_usuario"] == 0 || $json_usuario["cod_usuario"] == 1) {
+		$usuario = $json_usuario["primer_nombre"] . " " . $json_usuario["primer_apellido"];
+		$imagen = $json_usuario['imagen'];
+	}
+} else {
 	$imagen = "img/Imagenes_Perfil/logo_perfil.png";
 	$usuario = "Invitado";
-} else {
-	if ($_SESSION['ID_Rol'] > 0) {
-		$usuario = $_SESSION['Primer_Nombre'] . " " . $_SESSION['Primer_Apellido'];
-		$imagen = $_SESSION['Imagen'];
-	}
 }
 ?>
 <html>
@@ -48,14 +50,13 @@ if (!isset($_SESSION['ID_Rol'])) {
 			<p class="tamanoTitulo">COLOMBIA ABSENT</p>
 			<div class="perfil">
 				<div class="imagen">
-					<img src="<?php echo $imagen; ?>">
+					<img src="<?php echo $imagen; ?>"  class="imagen_perfil_index">
 				</div>
 				<div class="Info_Perfil">
-					<p>Bienvenido</p>
 					<?php
 					if (strcmp($usuario, "Invitado")) {
 					?>
-						<a href="Actualizar_Usuario_Pets_Home.php" class="Perfil_Nombre"><?php echo $usuario; ?></a>
+						<p class="Perfil_Nombre"><?php echo $usuario; ?></p>
 					<?php
 					} else {
 					?>
