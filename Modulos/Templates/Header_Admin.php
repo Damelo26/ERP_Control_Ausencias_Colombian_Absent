@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="CSS/EstiloRegistrarUsu.css">
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
     <script src="js/Seleccionar_Filas.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script>
         $(document).ready(function() {
             $(".menu_derecho li .fas").click(function() {

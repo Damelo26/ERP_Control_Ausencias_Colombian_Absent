@@ -31,10 +31,12 @@ if (!empty($_POST)) {
                 $tipos_ausenias = $_POST['tipos_ausenias'];
                 $fecha_inicio = $_POST['fecha_inicio'];
                 $newDate = date("Y-m-d", strtotime($fecha_inicio));
+                $fecha_final = $_POST['fecha_final'];
+                $newDateFinal = date("Y-m-d", strtotime($fecha_final));
                 $dias_ausente = $_POST['xfecha'];
                 $cod_estado = 3;
                 // $query_insert = false;
-               $query_insert = mysqli_query($conexion, "INSERT INTO ausencias(fecha,documento,descripcion,dias_ausentes,cod_tipo_ausencias,cod_Estado) VALUES ('$newDate','$archivo','$descripcion','$dias_ausente','$tipos_ausenias','$cod_estado');");
+               $query_insert = mysqli_query($conexion, "INSERT INTO ausencias(fecha,fecha_final,documento,descripcion,dias_ausentes,cod_tipo_ausencias,cod_Estado) VALUES ('$newDate','$newDateFinal','$archivo','$descripcion','$dias_ausente','$tipos_ausenias','$cod_estado');");
                 if ($query_insert) {
                     $last_id = mysqli_insert_id($conexion);
                     $query_insert_historial = mysqli_query($conexion, "INSERT INTO historial_ausencias(cod_ausencias,cedula) VALUES ('$last_id','$cedula');");
@@ -222,7 +224,7 @@ if (!empty($_POST)) {
             <div class="division_from_solicitud">
                 <p class="form_izquierda"></p>
                 <p class="form_izquierda">Inicio solicitud: <input name="fecha_inicio" type="text" class="datepicker form_derecha espacio_solicitud color_formas" id="datepicker1" required></p>
-                <p class="form_izquierda">Fin solicitud: <input type="text" class="datepicker form_derecha espacio_solicitud color_formas" id="datepicker2" disabled required></p>
+                <p class="form_izquierda">Fin solicitud: <input name="fecha_final" type="text" class="datepicker form_derecha espacio_solicitud color_formas" id="datepicker2" disabled required></p>
 
             </div>
             <div class="division_from_solicitud">

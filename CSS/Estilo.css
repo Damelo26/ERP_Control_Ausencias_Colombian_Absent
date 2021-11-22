@@ -328,6 +328,10 @@ input[type="file"] {
   border-radius: 3px;
 }
 
+.titulo_full_calendar {
+  background-color: #de3152;
+  
+}
 .principal {
   width: 80%;
   margin: 0 auto;

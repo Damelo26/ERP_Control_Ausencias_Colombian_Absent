@@ -95,7 +95,7 @@ if (isset($_POST['btnacceso'])) {
 
 <?php include_once 'Modulos/Templates/header.php'; ?>
 
-<div class="container">
+<div class="containers">
   <div class="forms-container">
     <div class="signin-signup">
 
