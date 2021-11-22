@@ -10,7 +10,7 @@ if ($accion == 'aprobar') {
     $SentenciaSQL = mysqli_query($conexion, "UPDATE ausencias au SET au.cod_Estado = '2' WHERE au.cod_ausencias = '$cod_historial_ausencias'");
     echo $SentenciaSQL;
 } else {
-    $Busqueda_Tabla_Historial_Ausencias = mysqli_query($conexion, "SELECT H_A.cod_historial_ausencias as Codigo, U.cedula, U.primer_nombre, U.segundo_nombre, U.primer_apellido, U.segundo_apellido, U.imagen, au.fecha,  au.fecha_final, au.dias_ausentes, au.cod_ausencias, Tipo_au.nombre_tipo_ausencias as tipo, Es.nombre as Estado from historial_ausencias H_A INNER JOIN usuario U ON H_A.cedula = U.cedula INNER JOIN ausencias au ON H_A.cod_ausencias = au.cod_ausencias INNER JOIN tipo_ausencias Tipo_au ON au.cod_tipo_ausencias = Tipo_au.cod_tipo_ausencias INNER JOIN tipo_estado Es ON Es.cod_Estado = au.cod_Estado WHERE au.cod_Estado = 3");
+    $Busqueda_Tabla_Historial_Ausencias = mysqli_query($conexion, "SELECT H_A.cod_historial_ausencias as Codigo, U.cedula, U.primer_nombre, U.segundo_nombre, U.primer_apellido, U.segundo_apellido, U.imagen, au.fecha,  au.fecha_final, au.dias_ausentes, au.descripcion,au.cod_ausencias, Tipo_au.nombre_tipo_ausencias as tipo, Es.nombre as Estado from historial_ausencias H_A INNER JOIN usuario U ON H_A.cedula = U.cedula INNER JOIN ausencias au ON H_A.cod_ausencias = au.cod_ausencias INNER JOIN tipo_ausencias Tipo_au ON au.cod_tipo_ausencias = Tipo_au.cod_tipo_ausencias INNER JOIN tipo_estado Es ON Es.cod_Estado = au.cod_Estado WHERE au.cod_Estado = 3");
     $busqueda = mysqli_query($conexion, "SELECT * FROM historial_ausencias");
     $eventos = array();
     $Resultado_Tabla = mysqli_num_rows($Busqueda_Tabla_Historial_Ausencias);
@@ -42,6 +42,7 @@ if ($accion == 'aprobar') {
                 'fecha_inicial' => $datos['fecha'],
                 'fecha_final' => $datos['fecha_final'],
                 'dias' => $datos['dias_ausentes'],
+                'descripcion' => $datos['descripcion']
             );
             array_push($eventos, $evento);
         }

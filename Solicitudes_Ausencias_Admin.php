@@ -12,9 +12,6 @@ include "Configuraciones/Funciones.php"; ?>
 <script src="js/es.js"></script>
 
 
-
-
-
 <script>
     function myFunction() {
         var y = document.getElementById("idCalendar");
@@ -39,7 +36,7 @@ include "Configuraciones/Funciones.php"; ?>
             headerToolbar: {
                 start: 'today, prev,next',
                 center: 'title',
-                end: 'dayGridMonth, timeGridWeek, timeGridDay, listWeek,listDay'
+                end: 'dayGridMonth, timeGridWeek, timeGridDay, listWeek'
             },
             dateClick: function(info) {
                 //alert('Date: ' + info.dateStr);
@@ -57,6 +54,7 @@ include "Configuraciones/Funciones.php"; ?>
                 $("#fechaInicio").html(info.event.extendedProps.fecha_inicial);
                 $("#fechaFinal").html(info.event.extendedProps.fecha_final);
                 $("#dias").html(info.event.extendedProps.dias);
+                $("#descripcionEvento").html(info.event.extendedProps.descripcion);
                 $("#exampleModal").modal('show');
             }
 
@@ -126,10 +124,6 @@ $(document).ready(function(){
                     <label>Descripción: </label> <br />
                     <label for="" id="descripcionEvento"></label><br />
                 </div>
-
-
-
-
             </div>
             <div class="modal-footer">
                 <button type="button" id="btnAprobar" class="btn btn-success" data-bs-dismiss="modal">Aprobar</button>
@@ -146,12 +140,12 @@ $(document).ready(function(){
         id: '2',
     }
     $('#btnAprobar').click(function() {
-        alert();
+        
         var id = document.getElementById("cod_ausencias").innerHTML;
         enviarInfo('aprobar', id)
     });
     $('#btnRechazar').click(function() {
-        alert();
+        
         var id = document.getElementById("cod_ausencias").innerHTML;
         enviarInfo('rechazar', id)
     });
@@ -171,11 +165,9 @@ $(document).ready(function(){
         })
     }
 </script>
-
-
 <section id="Solicitud">
     <div class="Contenido">
-        <button onclick="myFunction()" class="btn btn-outline-primary" style="width:180px; font-size: 70.5%;">Vista en formato tabla</button>
+        <button onclick="myFunction()" class="btn btn-outline-primary" style="width:180px; font-size: 70.5%;">Cambiar vista</button>
         <br />
         <br />
         <section id="Contenedor_Administrar_Historial" style="display: none">
@@ -273,7 +265,5 @@ $(document).ready(function(){
             </div>
         </div>
 </section>
-
 </div>
-
 <?php include_once 'Modulos/Templates/Footer_Admin.php'; ?>
